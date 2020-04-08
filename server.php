@@ -9,7 +9,7 @@ $email_2 ="";
 //db variables
 $host = 'localhost';
 $name = 'root';
-$pass = 'root';
+$pass = '';
 $database = 'profileringsfonds';
 
     //verbinding met database + errormsg
@@ -104,6 +104,13 @@ if(isset($_POST['submit_form'])){
     $f_name = $_POST['roepnaam'];
     $dob = $_POST['geboortedatum'];
     $address = $_POST['adres'];
+    $postcode = $_POST['postcode'];
+    $wp = $_POST['woonplaats'];
+    $tnummer = $_POST['tnummer'];
+    $mail = $_POST['email'];
+    $bsn = $_POST['bsn'];
+    $iban = $_POST['iban'];
+    $inschr = $_POST['ingeschreven'];
 //    $f_name = $_POST[''];
 //    $f_name = $_POST[''];
 //    $f_name = $_POST[''];
@@ -119,34 +126,63 @@ if(isset($_POST['submit_form'])){
 
     $pdf->SetFont("Arial", "B",16);
 
-    $pdf->Cell(0,10,"$f_name's formulier", 1, 1,'C');
+    $pdf->Cell(140,10,"$f_name's formulier pagina 1", 1, 1,'C');
 
-    $pdf->Cell(50,10,"Studentnummer: ",1,0);
-    $pdf->Cell(65,10,$snr,1,1);
+    $pdf->Cell(65,10,"Studentnummer: ",1,0);
+    $pdf->Cell(75,10,$snr,1,1);
 
-    $pdf->Cell(50,10,"Achternaam: ",1,0);
-    $pdf->Cell(65,10,$l_name,1,1);
+    $pdf->Cell(65,10,"Achternaam: ",1,0);
+    $pdf->Cell(75,10,$l_name,1,1);
 
-    $pdf->Cell(50,10,"Roepnaam: ",1,0);
-    $pdf->Cell(65,10,$f_name,1,1);
+    $pdf->Cell(65,10,"Roepnaam: ",1,0);
+    $pdf->Cell(75,10,$f_name,1,1);
 
-    $pdf->Cell(50,10,"Geboortedatum: ",1,0);
-    $pdf->Cell(65,10,$dob,1,1);
+    $pdf->Cell(65,10,"Geboortedatum: ",1,0);
+    $pdf->Cell(75,10,$dob,1,1);
 
-    $pdf->Cell(50,10,"Adres: ",1,0);
-    $pdf->Cell(65,10,$address,1,1);
+    $pdf->Cell(65,10,"Adres: ",1,0);
+    $pdf->Cell(75,10,$address,1,1);
+
+    $pdf->Cell(65,10,"Postcode: ",1,0);
+    $pdf->Cell(75,10,$postcode,1,1);
+
+    $pdf->Cell(65,10,"Woonplaats: ",1,0);
+    $pdf->Cell(75,10,$wp,1,1);
+
+    $pdf->Cell(65,10,"Telefoonnummer: ",1,0);
+    $pdf->Cell(75,10,$tnummer,1,1);
+
+    $pdf->Cell(65,10,"E-mailadres: ",1,0);
+    $pdf->Cell(75,10,$mail,1,1);
+
+    $pdf->Cell(65,10,"BSN-nummer: ",1,0);
+    $pdf->Cell(75,10,$bsn,1,1);
+
+    $pdf->Cell(65,10,"Iban Rekeningnummer: ",1,0);
+    $pdf->Cell(75,10,$iban,1,1);
+
+    $pdf->AddPage();
+
+    $pdf->SetFont("Arial", "B",16);
+
+    $pdf->Cell(140,10,"$f_name's formulier pagina 1", 1, 1,'C');
+
+    $pdf->Cell(65,10,"Vraag 1 pagina 2",1,0);
+    $pdf->Cell(75,10,$iban,1,1);
+
+
 
     $id = $_SESSION['id'];
     $user = $_SESSION['user'];
-    $fullpath = "C:/wamp64/www/Projects/Profileringsfonds/public_html/".$id.".pdf";
-    $dbpath = "/Projects/Profileringsfonds/public_html/".$id.".pdf";
+    $fullpath = "C:/wamp64/www/periode3/Selecta/Profileringsfonds/public_html/public_html".$id.".pdf";
+    $dbpath = "/periode3/Selecta/Profileringsfonds/public_html/".$id.".pdf";
     if(!empty($id)){
         $pdf->Output("$fullpath","F");
         $query = "INSERT INTO formulier (path, uID, uName) VALUES('$dbpath', '$id', '$user')";
         mysqli_query($conn, $query);
     }
 
-
+echo "Pagina 1 is verstuurd, klik op volgende om naar de volgende pagina te gaan";
 }
 
 
@@ -203,3 +239,33 @@ if (isset($_POST['change_pass'])){
              header('location: index.php');
          }
      }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+     // Tabel alles is not null van formulier tabel

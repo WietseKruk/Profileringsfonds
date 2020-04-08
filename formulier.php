@@ -125,6 +125,13 @@ if(isset($_GET['logout'])){session_destroy(); unset($_SESSION['user']); unset($_
         <p><b>IBAN rekeningnummer</b>
             <input type="text" name="iban"></p>
     </div>
+    <div align ="center" class="input-group">
+        <p><b>Sta jij op het moment van aanvragen ingeschreven bij NHL Stenden Hogeschool?</b>
+            <input type="radio" id="male" name="ingeschreven" value="Ja">
+            <label for="ja">Ja</label><br>
+            <input type="radio" id="female" name="ingeschreven" value="Nee">
+            <label for="nee">Nee</label><br>
+    </div>
     <button type="submit" name="submit_form">Submit</button>
 </form>
 
@@ -154,6 +161,6 @@ if(isset($_GET['logout'])){session_destroy(); unset($_SESSION['user']); unset($_
                 </div>
             </div>
         </footer>
-
+<a href="formulier2.php">Volgende pagina</a>
 </body>
 </html>

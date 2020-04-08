@@ -1,5 +1,4 @@
 <?php include('server.php')?>
-<?php include('update_formulier.php')?>
 <?php
 if(isset($_GET['logout'])){session_destroy(); unset($_SESSION['user']); unset($_SESSION['id']); header('location: index.php');}?>
 <!DOCTYPE html>
@@ -18,7 +17,7 @@ if(isset($_GET['logout'])){session_destroy(); unset($_SESSION['user']); unset($_
 </head>
 
 <body style="background: url(images/bg-page-white.png) no-repeat center center fixed; background-size: cover; ">
-<!-- navbar -->
+<!-- START NAVBAR -->
 <nav class="navbar navbar-expand-sm justify-content-between" >
     <!-- Links -->
     <div id="links">
@@ -73,40 +72,64 @@ if(isset($_GET['logout'])){session_destroy(); unset($_SESSION['user']); unset($_
         <button type="submit"><i class="fa fa-search"></i></button>
     </form>
 </nav>
+<!--END NAVBAR-->
+
 
 <div class="header">
     <h2>Persoonlijke gegevens</h2>
 </div>
-<?php
-$datum = date("m.d.y");
-$nummer = 0;
-$query = "SELECT * FROM vragen WHERE id > 9 AND id < 16 ORDER BY id ASC";
-$results = mysqli_query($conn, $query);
-"<form class = form1 method='POST'>";
-if (mysqli_num_rows($results) > 0) {
-    while ($row = $results->fetch_assoc()) {
-        $antwoorden = explode('|',$row['antwoorden']);
-        $nummer += 1;
-        if($row['antwoorden'] == null)
-        {
-            echo "<div align = 'center'><li>" . $row["vraag"] . "</li><input class='pass' type='text' name=$nummer></div>";
-        }
-        else{
-            echo "<div align = 'center'><li>" . $row["vraag"] . "</li></div>";
-            foreach ($antwoorden as $antwoord)
-            {
-                echo "<div align = 'center'><li><input type='radio' name='$nummer'><label>$antwoord</label></li></div>";
-                echo "</div>";
-            }
-        }
 
-
-    }
-    echo "</form>";
-}
-?>
-<a href="formulier3.php">Volgende pagina</a>
+<form method="post">
+    <div align ="center" class="input-group">
+        <p><b>Sta jij op het moment van aanvragen ingeschreven bij NHL Stenden Hogeschool?</b>
+            <input type="radio" id="male" name="ingeschreven" value="ja">
+            <label for="ja">Ja</label><br>
+            <input type="radio" id="female" name="ingeschreven" value="nee">
+            <label for="nee">Nee</label><br>
+    </div>
+    <div align ="center" class="input-group">
+        <p><b>Achternaam</b>
+            <input type="text" name="achternaam"></p>
+    </div>
+    <div align ="center" class="input-group">
+        <p><b>Roepnaam</b>
+            <input type="text" name="roepnaam"></p>
+    </div>
+    <div align ="center" class="input-group">
+        <p><b>Geboortedatum</b>
+            <input type="text" name="geboortedatum"></p>
+    </div>
+    <div align ="center" class="input-group">
+        <p><b>Adresgegevens</b>
+            <input type="text" name="adres"></p>
+    </div>
+    <div align ="center" class="input-group">
+        <p><b>Postcode</b>
+            <input type="text" name="postcode"></p>
+    </div>
+    <div align ="center" class="input-group">
+        <p><b>Woonplaats</b>
+            <input type="text" name="woonplaats"></p>
+    </div>
+    <div align ="center" class="input-group">
+        <p><b>Telefoonnummer</b>
+            <input type="text" name="tnummer"></p>
+    </div>
+    <div align ="center" class="input-group">
+        <p><b>E-mailadres</b>
+            <input type="text" name="email"></p>
+    </div>
+    <div align ="center" class="input-group">
+        <p><b>BSN-nummer</b>
+            <input type="text" name="bsn"></p>
+    </div>
+    <div align ="center" class="input-group">
+        <p><b>IBAN rekeningnummer</b>
+            <input type="text" name="iban"></p>
+    </div>
+    <button type="submit" name="submit_form">Submit</button>
 </form>
+
 
 <!-- Footer -->
 <footer class="footer">
