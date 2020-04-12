@@ -111,9 +111,15 @@ if(isset($_POST['submit_form'])){
     $bsn = $_POST['bsn'];
     $iban = $_POST['iban'];
     $inschr = $_POST['ingeschreven'];
-//    $f_name = $_POST[''];
-//    $f_name = $_POST[''];
-//    $f_name = $_POST[''];
+    $opleiding = $_POST['opleiding'];
+    $variant = $_POST['variant'];
+    $gestart = $_POST['gestart'];
+    $jaar = $_POST['jaar'];
+    $onderbroken = $_POST['onderbroken'];
+    $uitschr = $_POST['uitgeschreven'];
+    $andere = $_POST['andere'];
+    $instel = $_POST['instelling'];
+    $aanl = $_POST['aanleiding'];
 //    $f_name = $_POST[''];
 //    $f_name = $_POST[''];
 //    $f_name = $_POST[''];
@@ -126,7 +132,7 @@ if(isset($_POST['submit_form'])){
 
     $pdf->SetFont("Arial", "B",16);
 
-    $pdf->Cell(140,10,"$f_name's formulier pagina 1", 1, 1,'C');
+    $pdf->Cell(140,10,"$f_name's Persoonsgegevens", 1, 1,'C');
 
     $pdf->Cell(65,10,"Studentnummer: ",1,0);
     $pdf->Cell(75,10,$snr,1,1);
@@ -165,10 +171,40 @@ if(isset($_POST['submit_form'])){
 
     $pdf->SetFont("Arial", "B",16);
 
-    $pdf->Cell(140,10,"$f_name's formulier pagina 1", 1, 1,'C');
+    $pdf->Cell(140,10,"$f_name's Antwoorden", 1, 1,'C');
 
-    $pdf->Cell(65,10,"Vraag 1 pagina 2",1,0);
-    $pdf->Cell(75,10,$iban,1,1);
+    $pdf->Cell(65,10,"Vraag 1",1,0);
+    $pdf->Cell(75,10,$inschr,1,1);
+
+    $pdf->Cell(65,10,"Vraag 2",1,0);
+    $pdf->Cell(75,10,$opleiding,1,1);
+
+    $pdf->Cell(65,10,"Vraag 3",1,0);
+    $pdf->Cell(75,10,$variant,1,1);
+
+    $pdf->Cell(65,10,"Vraag 4",1,0);
+    $pdf->Cell(75,10,$gestart,1,1);
+
+    $pdf->Cell(65,10,"Vraag 5",1,0);
+    $pdf->Cell(75,10,$jaar,1,1);
+
+    $pdf->Cell(65,10,"Vraag 6",1,0);
+    $pdf->Cell(75,10,$onderbroken,1,1);
+
+    $pdf->Cell(65,10,"Vraag 7",1,0);
+    $pdf->Cell(75,10,$uitschr,1,1);
+
+    $pdf->Cell(65,10,"Vraag 8",1,0);
+    $pdf->Cell(75,10,$andere,1,1);
+
+    $pdf->Cell(65,10,"Vraag 9",1,0);
+    $pdf->Cell(75,10,$instel,1,1);
+
+    $pdf->Cell(65,10,"Vraag 10",1,0);
+    $pdf->Cell(75,10,$andere,1,1);
+
+    $pdf->Cell(65,10,"Vraag 11",1,0);
+    $pdf->Cell(75,10,$aanl,1,1);
 
 
 
@@ -181,8 +217,6 @@ if(isset($_POST['submit_form'])){
         $query = "INSERT INTO formulier (path, uID, uName) VALUES('$dbpath', '$id', '$user')";
         mysqli_query($conn, $query);
     }
-
-echo "Pagina 1 is verstuurd, klik op volgende om naar de volgende pagina te gaan";
 }
 
 

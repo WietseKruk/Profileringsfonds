@@ -127,11 +127,91 @@ if(isset($_GET['logout'])){session_destroy(); unset($_SESSION['user']); unset($_
     </div>
     <div align ="center" class="input-group">
         <p><b>Sta jij op het moment van aanvragen ingeschreven bij NHL Stenden Hogeschool?</b>
-            <input type="radio" id="male" name="ingeschreven" value="Ja">
+            <input type="radio" id="ja" name="ingeschreven" value="ja">
+            <label>Ja</label><br>
+            <input type="radio" id="nee" name="ingeschreven" value="nee">
+            <label>Nee</label><br>
+    </div>
+    <div align ="center" class="input-group">
+        <p><b>Voor welke opleiding sta jij op dit moment ingeschreven?</b></p>
+        <input type="text" name="opleiding"></p>
+    </div>
+    <div align ="center" class="input-group">
+        <p><b>Welke opleidingsvariant volg jij?</b>
+            <input type="radio" id="voltijd" name="variant" value="voltijd">
+            <label>Voltijd</label><br>
+            <input type="radio" id="deeltijd" name="variant" value="deeltijd">
+            <label>Deeltijd</label><br>
+            <input type="radio" id="duaal" name="variant" value="duaal">
+            <label>Duaal</label><br>
+    </div>
+    <div align ="center" class="input-group">
+        <p><b>Per wanneer ben je met je studie gestart?</b></p>
+        <input type="text" name="gestart"></p>
+    </div>
+    <div align ="center" class="input-group">
+        <p><b>In welk studiejaar zit je?</b>
+            <input type="radio" id="1e jaars" name="jaar" value="1e jaars">
+            <label>1e jaars</label><br>
+            <input type="radio" id="2e jaars" name="jaar" value="2e jaars">
+            <label>2e jaars</label><br>
+            <input type="radio" id="3e jaars" name="jaar" value="3e jaars">
+            <label>3e jaars</label><br>
+            <input type="radio" id="4e jaars" name="jaar" value="4e jaars">
+            <label>4e jaars</label><br>
+            <input type="radio" id="oudere jaars" name="jaar" value="ouder jaars">
+            <label>Ouder jaars</label><br>
+    </div>
+    <div align ="center" class="input-group">
+        <p><b>Heb je de studie tussendoor onderbroken</b>
+            <input type="radio" id="ja" name="onderbroken" value="ja">
             <label for="ja">Ja</label><br>
-            <input type="radio" id="female" name="ingeschreven" value="Nee">
+            <input type="radio" id="nee" name="onderbroken" value="nee">
             <label for="nee">Nee</label><br>
     </div>
+    <div align ="center" class="input-group">
+        <p><b>Heb jij je gedurende de studieonderbreking
+                ook uitgeschreven bij NHL Stenden?</b>
+            <input type="radio" id="ja" name="uitgeschreven" value="ja">
+            <label for="ja">Ja</label><br>
+            <input type="radio" id="nee" name="uitgeschreven" value="nee">
+            <label for="nee">Nee</label><br>
+    </div>
+    <div align ="center" class="input-group">
+        <p><b>Heb je ook voor andere studie(s)
+                ingeschreven gestaan bij NHL Stenden? En zo ja, welke.</b>
+            <input type="text" name="andere"></p>
+    </div>
+    <div align ="center" class="input-group">
+        <p><b>Heb je eerder een inschrijving bij een
+                andere instelling (HBO/Universiteit) gehad? Zo ja, bij welke instelling, en welke periode</b>
+            <input type="text" name="instelling"></p>
+    </div>
+    <div align ="center" class="input-group">
+        <p><b>Bijzondere omstandigheden die aanleiding is tot deze aanvraag (kruis aan welke van
+                toepassing is):</b>
+            <input type="radio" id="optie1" name="aanleiding" value="optie1">
+            <label>ziekte of zwangerschap en bevalling;</label><br>
+            <input type="radio" id="2e" name="aanleiding" value="optie2">
+            <label>een functiestoornis, handicap of chronische ziekte;</label><br>
+            <input type="radio" id="3e" name="aanleiding" value="optie3">
+            <label>bijzondere familieomstandigheden;</label><br>
+            <input type="radio" id="4e" name="aanleiding" value="optie4">
+            <label>een onvoldoende studeerbare opleiding;</label><br>
+            <input type="radio" id="ouder Jaars" name="aanleiding" value="optie5">
+            <label>de door de hogeschool toegekende status van topsporter;</label><br>
+            <input type="radio" id="ouder Jaars" name="aanleiding" value="optie6">
+            <label>andere dan de in de hierboven genoemde onderdelen bedoelde omstandigheden die, indien
+                een daarop gebaseerd verzoek om financiële ondersteuning door het College van Bestuur niet
+                zou worden gehonoreerd, zouden leiden tot een onbillijkheid van overwegende aard.</label><br>
+            <input type="radio" id="ouder Jaars" name="aanleiding" value="optie7">
+            <label for="optie7">activiteiten op bestuurlijk of maatschappelijk gebied die naar het oordeel van het College van
+                Bestuur mede in het belang zijn van de hogeschool of van het onderwijs dat de student volgt;</label><br>
+    </div>
+
+
+
+
     <button type="submit" name="submit_form">Submit</button>
 </form>
 
@@ -161,6 +241,5 @@ if(isset($_GET['logout'])){session_destroy(); unset($_SESSION['user']); unset($_
                 </div>
             </div>
         </footer>
-<a href="formulier2.php">Volgende pagina</a>
 </body>
 </html>
