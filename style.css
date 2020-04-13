@@ -250,3 +250,33 @@ a {
     color: #E1BEE7;
     text-decoration: none
 }
+
+
+
+#hover-element{
+    display: none;
+    position: absolute;
+    background-color: #9ed7da;
+    padding: 10px;
+    border: solid 2px;
+    left: 100px;
+}
+
+#hover-div:hover #hover-element {
+    display: block;
+
+}
+
+#hover-div {
+    display: inline-flex;
+
+}
+
+#midden {
+    position: center;
+    padding: 60px;
+}
+
+#Formvragen{
+
+}

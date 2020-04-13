@@ -27,11 +27,12 @@ if(isset($_GET['logout'])){session_destroy(); unset($_SESSION['user']); unset($_
                 </a>
             </li>
             <li class="nav-item">
-                <a method="post" class="nav-link" href="formulier.php" name="start_form">Start aanvraag</a>
+                <a class="nav-link" href="index.php">Startpagina</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="info.php">Informatie</a>
+                <a method="post" class="nav-link" href="formulier.php" name="start_form">Start aanvraag</a>
             </li>
+
             <li class="nav-item">
                 <a class="nav-link" href="FAQ.php">FAQ</a>
             </li>
@@ -43,7 +44,7 @@ if(isset($_GET['logout'])){session_destroy(); unset($_SESSION['user']); unset($_
             <?php endif?>
             <?php if(isset($_SESSION['admin'])) : ?>
                 <li>
-                    <a class="nav-link" href="admin.php">admin</a>
+                    <a class="nav-link" href="admin.php">Medewerker</a>
                 </li>
             <?php endif?>
             <li>
@@ -72,9 +73,26 @@ if(isset($_GET['logout'])){session_destroy(); unset($_SESSION['user']); unset($_
     </form>
     </form>
 </nav>
+<div class="midden">
+<h1> Het Profileringsfonds</h1>
+<p>Financiële ondersteuning bij studievertraging hoger onderwijs (Profileringsfonds)
+    Volgt u een studie in het hoger onderwijs en loopt u door bijzondere omstandigheden studievertraging op? Bijvoorbeeld omdat u zwanger bent, of omdat u in het bestuur gaat van uw studentenvereniging? Dan kunt u een financiële ondersteuning aanvragen uit het Profileringsfonds van uw hogeschool of universiteit.
 
+    Voorwaarden financiële ondersteuning Profileringsfonds
+    U kunt financiële ondersteuning uit het Profileringsfonds aanvragen als u voldoet aan de volgende voorwaarden:
 
+    U heeft collegegeld betaald voor de opleiding.
+    U ontvangt studiefinanciering.
+    U heeft studievertraging opgelopen door bijzondere omstandigheden.
+    Bijzondere omstandigheden
+    Bij bijzondere omstandigheden moet u bijvoorbeeld denken aan:
 
+    lidmaatschap van het bestuur van een studentenvereniging, medezeggenschapsraad of opleidingscommissie;
+    ziekte of zwangerschap en bevalling;
+    een handicap of chronische ziekte.
+    Financiële ondersteuning aanvragen
+    U vraagt de financiële ondersteuning aan bij uw universiteit of hogeschool.</p>
+</div>
 
 <!-- Footer -->
 <footer class="footer fixed-bottom">

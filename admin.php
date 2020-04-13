@@ -30,11 +30,12 @@ if(isset($_GET['logout'])){session_destroy(); unset($_SESSION['user']); unset($_
                 </a>
             </li>
             <li class="nav-item">
-                <a method="post" class="nav-link" href="formulier.php" name="start_form">Start aanvraag</a>
+                <a class="nav-link" href="index.php">Startpagina</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="info.php">Informatie</a>
+                <a method="post" class="nav-link" href="formulier.php" name="start_form">Start aanvraag</a>
             </li>
+
             <li class="nav-item">
                 <a class="nav-link" href="FAQ.php">FAQ</a>
             </li>
@@ -46,7 +47,7 @@ if(isset($_GET['logout'])){session_destroy(); unset($_SESSION['user']); unset($_
             <?php endif?>
             <?php if(isset($_SESSION['admin'])) : ?>
                 <li>
-                    <a class="nav-link" href="admin.php">admin</a>
+                    <a class="nav-link" href="admin.php">Medewerker</a>
                 </li>
             <?php endif?>
             <li>

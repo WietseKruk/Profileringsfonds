@@ -29,6 +29,9 @@ if(isset($_GET['logout'])){session_destroy(); unset($_SESSION['user']); unset($_
                 <a method="post" class="nav-link" href="formulier.php" name="start_form">Start aanvraag</a>
             </li>
             <li class="nav-item">
+                <a class="nav-link" href="fileupload.php">Bestanden uploaden</a>
+            </li>
+            <li class="nav-item">
                 <a class="nav-link" href="info.php">Informatie</a>
             </li>
             <li class="nav-item">
