@@ -1,5 +1,6 @@
 <?php include('server.php')?>
 <?php
+
 if(isset($_GET['logout'])){session_destroy(); unset($_SESSION['user']); unset($_SESSION['id']); header('location: index.php');}?>
 <!DOCTYPE html>
 <head>
@@ -81,6 +82,7 @@ if(isset($_GET['logout'])){session_destroy(); unset($_SESSION['user']); unset($_
 </div>
 
 <form method="post" enctype="multipart/form-data" >
+<?php include ('errors.php')?>
     <div align ="center" class="formvragen">
        <p><b>Studentnummer</b>
         <input type="text" name="studentnummer">
@@ -225,6 +227,7 @@ if(isset($_GET['logout'])){session_destroy(); unset($_SESSION['user']); unset($_
         </span>
         </div>
             <input type="radio" id="voltijd" name="variant" value="voltijd">
+            <input type="radio" id="voltijd" name="variant" value="voltijd" checked="checked">
             <label>Voltijd</label><br>
             <input type="radio" id="deeltijd" name="variant" value="deeltijd">
             <label>Deeltijd</label><br>
@@ -250,6 +253,7 @@ if(isset($_GET['logout'])){session_destroy(); unset($_SESSION['user']); unset($_
         </span>
         </div>
             <input type="radio" id="1e jaars" name="jaar" value="1e jaars">
+            <input type="radio" id="1e jaars" name="jaar" value="1e jaars" checked="checked">
             <label>1e jaars</label><br>
             <input type="radio" id="2e jaars" name="jaar" value="2e jaars">
             <label>2e jaars</label><br>
@@ -269,6 +273,7 @@ if(isset($_GET['logout'])){session_destroy(); unset($_SESSION['user']); unset($_
         </span>
         </div>
             <input type="radio" id="ja" name="onderbroken" value="ja">
+            <input type="radio" id="ja" name="onderbroken" value="ja" checked="checked">
             <label>Ja</label><br>
             <input type="radio" id="nee" name="onderbroken" value="nee">
             <label>Nee</label><br>
@@ -283,6 +288,7 @@ if(isset($_GET['logout'])){session_destroy(); unset($_SESSION['user']); unset($_
         </span>
         </div>
             <input type="radio" id="ja" name="uitgeschreven" value="ja">
+            <input type="radio" id="ja" name="uitgeschreven" value="ja" checked="checked">
             <label for="ja">Ja</label><br>
             <input type="radio" id="nee" name="uitgeschreven" value="nee">
             <label for="nee">Nee</label><br>
@@ -319,6 +325,7 @@ if(isset($_GET['logout'])){session_destroy(); unset($_SESSION['user']); unset($_
         </span>
         </div>
             <input type="radio" id="optie1" name="aanleiding" value="optie1">
+            <input type="radio" id="optie1" name="aanleiding" value="optie1" checked="checked">
             <label>ziekte of zwangerschap en bevalling;</label><br>
             <input type="radio" id="2e" name="aanleiding" value="optie2">
             <label>een functiestoornis, handicap of chronische ziekte;</label><br>
@@ -357,6 +364,7 @@ if(isset($_GET['logout'])){session_destroy(); unset($_SESSION['user']); unset($_
         </span>
         </div>
             <input type="radio" id="prestatiebeurs" name="duo" value="prestatiebeurs">
+            <input type="radio" id="prestatiebeurs" name="duo" value="prestatiebeurs" checked="checked">
             <label>Prestatiebeurs</label><br>
             <input type="radio" id="leenstelsel" name="duo" value="leenstelsel">
             <label>Leenstelsel</label><br></p>
@@ -371,6 +379,7 @@ if(isset($_GET['logout'])){session_destroy(); unset($_SESSION['user']); unset($_
         </span>
         </div>
             <input type="radio" id="ja" name="extra" value="ja">
+            <input type="radio" id="ja" name="extra" value="ja" checked="checked">
             <label>Ja</label><br>
             <input type="radio" id="nee" name="extra" value="nee">
             <label>Nee</label><br></p>
