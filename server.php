@@ -229,7 +229,7 @@ if(isset($_POST['submit_form'])) {
 
         $pdf->AddPage();
 
-        $pdf->SetFont("Arial", "B", 16);
+        $pdf->SetFont("Arial", "B", 10);
 
         $pdf->Cell(140, 10, "$f_name's Persoonsgegevens", 1, 1, 'C');
 
@@ -350,7 +350,7 @@ if(isset($_POST['submit_form'])) {
 
         $id = $_SESSION['id'];
         $user = $_SESSION['user'];
-        $fullpath = "C:/wamp64/www/periode3/Selecta/Profileringsfonds/public_html/public_html" . $id . ".pdf";
+        $fullpath = "C:/wamp64/www/periode3/Selecta/Profileringsfonds/public_html/" . $id . ".pdf";
         $dbpath = "/periode3/Selecta/Profileringsfonds/public_html/" . $id . ".pdf";
         if (!empty($id)) {
             $pdf->Output("$fullpath", "F");
