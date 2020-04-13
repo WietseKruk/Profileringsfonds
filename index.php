@@ -34,42 +34,42 @@ if(isset($_GET['logout'])){session_destroy(); unset($_SESSION['user']); unset($_
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="index.php">Startpagina</a>
+                <a class="nav-link" href="index.php"><?php echo $lang['startpagina'] ?></a>
             </li>
             <li class="nav-item">
-                <a method="post" class="nav-link" href="formulier.php" name="start_form">Start aanvraag</a>
+                <a method="post" class="nav-link" href="formulier.php" name="start_form"><?php echo $lang['startaanvraag'] ?></a>
             </li>
 
 
             <li class="nav-item">
-                <a class="nav-link" href="FAQ.php">Veelgestelde vragen</a>
+                <a class="nav-link" href="FAQ.php"><?php echo $lang['faq'] ?></a>
             </li>
 
             <?php if (!isset($_SESSION['user'])) : ?>
                 <li class="nav-item">
-                    <a class="nav-link" href="login.php">Login</a>
+                    <a class="nav-link" href="login.php"><?php echo $lang['login'] ?></a>
                 </li>
             <?php endif?>
             <?php if(isset($_SESSION['admin'])) : ?>
                 <li>
-                    <a class="nav-link" href="admin.php">Mederwerker</a>
+                    <a class="nav-link" href="admin.php"><?php echo $lang['medewerker'] ?></a>
                 </li>
             <?php endif?>
             <li>
                 <img src="images/globe.png" width="35px">
             </li>
             <li class="nav-item">
-                <a  href="#" data-lang="nl">NL</a>
+                <a  href="index.php?lang=nl" data-lang="nl">NL</a>
             </li>/
             <li class="nav-item" >
-                <a  href="#" data-lang="en">ENG</a>
+                <a  href="index.php?lang=en" data-lang="en">ENG</a>
             </li>
 
 
             <?php if (isset($_SESSION['user'])) : ?>
                 <div class="success" style="margin-left: 400px; margin-top: 45px; margin-bottom: 45px;">
                     <li class="nav-item" >
-                        Ingelogd als <?php echo $_SESSION['user'];?> --- <a style="color: red" href="index.php?logout='1'">Log uit</a>
+                      <p>  <?php echo $lang['Loggedin'] ?></p> <?php echo $_SESSION['user'];?> --- <a style="color: red" href="index.php?logout='1'"> <?php echo $lang['logout'] ?></a>
                     </li>
                 </div>
             <?php endif?>
@@ -86,11 +86,11 @@ if(isset($_GET['logout'])){session_destroy(); unset($_SESSION['user']); unset($_
 
 <!-- jumbotron -->
 <div class="jumbotron" style="background-image: url(https://image.freepik.com/free-vector/seamless-chaotic-square-pattern-background-vector-graphic-design-from-random-rotated-squares-with-opacity-effect_1164-1118.jpg);">
-    <h1 class="display-3">Het Profileringsfonds</h1>
+    <h1 class="display-3"><?php echo $lang['profileringsfonds'] ?></h1>
     <p class="lead">NHL Stenden University of Applied Sciences</p>
     <hr class="my-2">
     <p class="lead">
-       <br><br><a class="btn btn-primary btn-lg" href="formulier.php" role="button">Start aanvraag</a>
+       <br><br><a class="btn btn-primary btn-lg" href="formulier.php" role="button"><?php echo $lang['staraanvraag2'] ?></a>
     </p>
 </div>
 <div class="content">

@@ -98,7 +98,7 @@ if(isset($_POST['register'])){
 
 
 
-if(isset($_POST['submit_form'])){
+if(isset($_POST['submit_form'])) {
 
 
     $snr = $_POST['studentnummer'];
@@ -350,160 +350,184 @@ if(isset($_POST['submit_form'])){
         $pdf->Cell(75, 10, $wijze, 1, 1);
 
 
-    $id = $_SESSION['id'];
-    $user = $_SESSION['user'];
-    $fullpath = "C:\wamp64\www\profileringsfonds\public_html/public_html".$id.".pdf";
-    $dbpath = "Profileringsfonds/public_html/".$id.".pdf";
+        $id = $_SESSION['id'];
+        $user = $_SESSION['user'];
+        $fullpath = "C:\wamp64\www\profileringsfonds\public_html/public_html" . $id . ".pdf";
+        $dbpath = "Profileringsfonds/public_html/" . $id . ".pdf";
 
-    if(!empty($id)){
-        $pdf->Output("$fullpath","F");
-        $query = "INSERT INTO formulier (path, uID, uName) VALUES('$dbpath', '$id', '$user')";
-        mysqli_query($conn, $query);
-    }
-
-
-    $bestandid = 10000;
-    $filename = $_FILES["file"]["name"];
-    $file_basename = substr($filename, 0, strripos($filename, '.')); // get file extention
-    $file_ext = substr($filename, strripos($filename, '.')); // get file name
-    $filesize = $_FILES["file"]["size"];
-    $allowed_file_types = array('.doc', '.docx', '.rtf', '.pdf');
-
-    if (in_array($file_ext, $allowed_file_types) && ($filesize < 200000)) {
-        // Rename file
-        $newfilename = $bestandid + $id . $file_ext;
-        if (file_exists("public_html/" . $newfilename)) {
-            // file already exists error
-            echo "You have already uploaded this file.";
-        } else {
-            move_uploaded_file($_FILES["file"]["tmp_name"], "public_html/" . $newfilename);
-            echo "File uploaded successfully.";
-
-
-            $dbpath = "/Profileringsfonds/public_html/" . $newfilename;
-           $queryUP = "UPDATE formulier SET pathbijlage = '$dbpath' WHERE uID = $id";
-            mysqli_query($conn, $queryUP);
-            mysqli_close($conn);
-            header('location:index.php');
-
-        }
-    } elseif (empty($file_basename)) {
-        // file selection error
-        echo "Please select a file to upload.";
-    } elseif ($filesize > 200000) {
-        // file size error
-        echo "The file you are trying to upload is too large.";
-    } else {
-        // file type error
-        echo "Only these file typs are allowed for upload: " . implode(', ', $allowed_file_types);
-        unlink($_FILES["file"]["tmp_name"]);
-    }
-
-
-
-
-}
-
-
-if (isset($_POST['change_pass'])){
-    $current_pass = mysqli_real_escape_string($conn, $_POST['current_pass']);
-    $pass1 = mysqli_real_escape_string($conn, $_POST['new_password_1']);
-    $pass2 = mysqli_real_escape_string($conn, $_POST['new_password_2']);
-
-    //Als er fouten zijn push naar array
-    if(empty($current_pass)){array_push($errors,"Huidig wachtwoord moet ingevuld worden");}
-    if(empty($pass1)){array_push($errors,"Nieuw wachtwoord moet ingevuld worden");}
-    if(empty($pass2)){array_push($errors,"Bevestig wachtwoord moet ingevuld worden");}
-    if($pass1 != $pass2){array_push($errors,"De twee wachtwoorden komen niet overeen");}
-    if($current_pass == $pass1 || $current_pass == $pass2){array_push($errors, "U moet een nieuw wachtwoord invoeren");}
-    $id = $_SESSION['id'];
-    if(count($errors) == 0){
-        $password = md5($current_pass);
-        $query = "SELECT * FROM users WHERE password='$password' AND uID = '$id'";
-        $result1 = mysqli_query($conn, $query);
-
-        if(mysqli_num_rows($result1) == 1){
-            $new_pass = md5($pass1);
-            $query = "UPDATE users SET password = '$new_pass', firstlogin = '0' WHERE password='$password' AND uID = '$id'";
+        if (!empty($id)) {
+            $pdf->Output("$fullpath", "F");
+            $query = "INSERT INTO formulier (path, uID, uName) VALUES('$dbpath', '$id', '$user')";
             mysqli_query($conn, $query);
-            while($row = $result1->fetch_assoc()) {
+        }
+
+
+        $bestandid = 10000;
+        $filename = $_FILES["file"]["name"];
+        $file_basename = substr($filename, 0, strripos($filename, '.')); // get file extention
+        $file_ext = substr($filename, strripos($filename, '.')); // get file name
+        $filesize = $_FILES["file"]["size"];
+        $allowed_file_types = array('.doc', '.docx', '.rtf', '.pdf');
+
+        if (in_array($file_ext, $allowed_file_types) && ($filesize < 200000)) {
+            // Rename file
+            $newfilename = $bestandid + $id . $file_ext;
+            if (file_exists("public_html/" . $newfilename)) {
+                // file already exists error
+                echo "You have already uploaded this file.";
+            } else {
+                move_uploaded_file($_FILES["file"]["tmp_name"], "public_html/" . $newfilename);
+                echo "File uploaded successfully.";
+
+
+                $dbpath = "/Profileringsfonds/public_html/" . $newfilename;
+                $queryUP = "UPDATE formulier SET pathbijlage = '$dbpath' WHERE uID = $id";
+                mysqli_query($conn, $queryUP);
+                mysqli_close($conn);
+                header('location:index.php');
+
+            }
+        } elseif (empty($file_basename)) {
+            // file selection error
+            echo "Please select a file to upload.";
+        } elseif ($filesize > 200000) {
+            // file size error
+            echo "The file you are trying to upload is too large.";
+        } else {
+            // file type error
+            echo "Only these file typs are allowed for upload: " . implode(', ', $allowed_file_types);
+            unlink($_FILES["file"]["tmp_name"]);
+        }
+
+
+    }
+
+
+    if (isset($_POST['change_pass'])) {
+        $current_pass = mysqli_real_escape_string($conn, $_POST['current_pass']);
+        $pass1 = mysqli_real_escape_string($conn, $_POST['new_password_1']);
+        $pass2 = mysqli_real_escape_string($conn, $_POST['new_password_2']);
+
+        //Als er fouten zijn push naar array
+        if (empty($current_pass)) {
+            array_push($errors, "Huidig wachtwoord moet ingevuld worden");
+        }
+        if (empty($pass1)) {
+            array_push($errors, "Nieuw wachtwoord moet ingevuld worden");
+        }
+        if (empty($pass2)) {
+            array_push($errors, "Bevestig wachtwoord moet ingevuld worden");
+        }
+        if ($pass1 != $pass2) {
+            array_push($errors, "De twee wachtwoorden komen niet overeen");
+        }
+        if ($current_pass == $pass1 || $current_pass == $pass2) {
+            array_push($errors, "U moet een nieuw wachtwoord invoeren");
+        }
+        $id = $_SESSION['id'];
+        if (count($errors) == 0) {
+            $password = md5($current_pass);
+            $query = "SELECT * FROM users WHERE password='$password' AND uID = '$id'";
+            $result1 = mysqli_query($conn, $query);
+
+            if (mysqli_num_rows($result1) == 1) {
+                $new_pass = md5($pass1);
+                $query = "UPDATE users SET password = '$new_pass', firstlogin = '0' WHERE password='$password' AND uID = '$id'";
+                mysqli_query($conn, $query);
+                while ($row = $result1->fetch_assoc()) {
                     $_SESSION['id'] = $row['uID'];
                     $_SESSION['type'] = $row['type'];
                     $_SESSION['user'] = $row['email'];
-            }header('location:index.php');
+                }
+                header('location:index.php');
+            }
         }
+
     }
 
-}
 
+    //wachtwoord veranderen
+    if (isset($_POST['change_pass'])) {
+        $pass_1 = mysqli_real_escape_string($conn, $_POST['new_password_1']);
+        $pass_2 = mysqli_real_escape_string($conn, $_POST['new_password_2']);
 
-     //wachtwoord veranderen
-     if(isset($_POST['change_pass'])){
-         $pass_1 = mysqli_real_escape_string($conn, $_POST['new_password_1']);
-         $pass_2 = mysqli_real_escape_string($conn, $_POST['new_password_2']);
+        //push errors
+        if (empty($pass_1)) {
+            array_push($errors, "Wachtwoord is leeg");
+        }
+        if (empty($pass_2)) {
+            array_push($errors, "Bevestig wachtwoord is leeg");
+        }
+        if ($pass_1 != $pass_2) {
+            array_push($errors, "De wachtwoorden komen niet overeen");
+        }
 
-         //push errors
-         if(empty($pass_1)){array_push($errors,"Wachtwoord is leeg");}
-         if(empty($pass_2)){array_push($errors,"Bevestig wachtwoord is leeg");}
-         if($pass_1 != $pass_2){array_push($errors,"De wachtwoorden komen niet overeen");}
-
-         //wachtwoord hashen en updaten als er geen errors zijn
-         if(count($errors) == 0){
-             $pass = md5($pass_1);
-             $id = $_SESSION['id'];
-             $user =  $_SESSION['user'];
-             $query = "UPDATE users SET password = '$pass', firstlogin = '0' WHERE uID = '$id' AND email = '$user'";
-             mysqli_query($conn, $query);
-             mysqli_close($conn);
-             header('location: index.php');
-         }
-     }
-
-
-
-if (isset($_POST['Fsubmit'])) {
-    $id = $_SESSION['id'];
-    $bestandid = 10000;
-    $filename = $_FILES["file"]["name"];
-    $file_basename = substr($filename, 0, strripos($filename, '.')); // get file extention
-    $file_ext = substr($filename, strripos($filename, '.')); // get file name
-    $filesize = $_FILES["file"]["size"];
-    $allowed_file_types = array('.doc', '.docx', '.rtf', '.pdf');
-
-    if (in_array($file_ext, $allowed_file_types) && ($filesize < 200000)) {
-        // Rename file
-        $newfilename = $bestandid + $id . $file_ext;
-        if (file_exists("public_html/" . $newfilename)) {
-            // file already exists error
-            echo "You have already uploaded this file.";
-        } else {
-            move_uploaded_file($_FILES["file"]["tmp_name"], "public_html/" . $newfilename);
-            echo "File uploaded successfully.";
-
-
-            $dbpath = "/Profileringsfonds/public_html/" . $newfilename;
-            $queryUP = "UPDATE formulier SET pathbijlage = '$dbpath' WHERE uID = $id";
-            mysqli_query($conn, $queryUP);
+        //wachtwoord hashen en updaten als er geen errors zijn
+        if (count($errors) == 0) {
+            $pass = md5($pass_1);
+            $id = $_SESSION['id'];
+            $user = $_SESSION['user'];
+            $query = "UPDATE users SET password = '$pass', firstlogin = '0' WHERE uID = '$id' AND email = '$user'";
+            mysqli_query($conn, $query);
             mysqli_close($conn);
-            header('location:index.php');
-
+            header('location: index.php');
         }
-    } elseif (empty($file_basename)) {
-        // file selection error
-        echo "Please select a file to upload.";
-    } elseif ($filesize > 200000) {
-        // file size error
-        echo "The file you are trying to upload is too large.";
-    } else {
-        // file type error
-        echo "Only these file typs are allowed for upload: " . implode(', ', $allowed_file_types);
-        unlink($_FILES["file"]["tmp_name"]);
+    }
+
+
+    if (isset($_POST['Fsubmit'])) {
+        $id = $_SESSION['id'];
+        $bestandid = 10000;
+        $filename = $_FILES["file"]["name"];
+        $file_basename = substr($filename, 0, strripos($filename, '.')); // get file extention
+        $file_ext = substr($filename, strripos($filename, '.')); // get file name
+        $filesize = $_FILES["file"]["size"];
+        $allowed_file_types = array('.doc', '.docx', '.rtf', '.pdf');
+
+        if (in_array($file_ext, $allowed_file_types) && ($filesize < 200000)) {
+            // Rename file
+            $newfilename = $bestandid + $id . $file_ext;
+            if (file_exists("public_html/" . $newfilename)) {
+                // file already exists error
+                echo "You have already uploaded this file.";
+            } else {
+                move_uploaded_file($_FILES["file"]["tmp_name"], "public_html/" . $newfilename);
+                echo "File uploaded successfully.";
+
+
+                $dbpath = "/Profileringsfonds/public_html/" . $newfilename;
+                $queryUP = "UPDATE formulier SET pathbijlage = '$dbpath' WHERE uID = $id";
+                mysqli_query($conn, $queryUP);
+                mysqli_close($conn);
+                header('location:index.php');
+
+            }
+        } elseif (empty($file_basename)) {
+            // file selection error
+            echo "Please select a file to upload.";
+        } elseif ($filesize > 200000) {
+            // file size error
+            echo "The file you are trying to upload is too large.";
+        } else {
+            // file type error
+            echo "Only these file typs are allowed for upload: " . implode(', ', $allowed_file_types);
+            unlink($_FILES["file"]["tmp_name"]);
+        }
     }
 }
 
 
 
+if (!isset($_SESSION['lang']))
+    $_SESSION['lang'] = "en";
+else if (isset($_GET['lang']) && $_SESSION['lang'] != $_GET['lang'] && !empty($_GET['lang'])) {
+    if ($_GET['lang'] == "en")
+        $_SESSION['lang'] = "en";
+    else if ($_GET['lang'] == "nl")
+        $_SESSION['lang'] = "nl";
+}
 
+require_once "languages/" . $_SESSION['lang'] . ".php";
 
 
 

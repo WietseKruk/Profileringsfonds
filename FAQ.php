@@ -27,41 +27,42 @@ if(isset($_GET['logout'])){session_destroy(); unset($_SESSION['user']); unset($_
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="index.php">Startpagina</a>
+                <a class="nav-link" href="index.php"><?php echo $lang['startpagina'] ?></a>
             </li>
             <li class="nav-item">
-                <a method="post" class="nav-link" href="formulier.php" name="start_form">Start aanvraag</a>
+                <a method="post" class="nav-link" href="formulier.php" name="start_form"><?php echo $lang['startaanvraag'] ?></a>
             </li>
 
+
             <li class="nav-item">
-                <a class="nav-link" href="FAQ.php">FAQ</a>
+                <a class="nav-link" href="FAQ.php"><?php echo $lang['faq'] ?></a>
             </li>
 
             <?php if (!isset($_SESSION['user'])) : ?>
                 <li class="nav-item">
-                    <a class="nav-link" href="login.php">Login</a>
+                    <a class="nav-link" href="login.php"><?php echo $lang['login'] ?></a>
                 </li>
             <?php endif?>
             <?php if(isset($_SESSION['admin'])) : ?>
                 <li>
-                    <a class="nav-link" href="admin.php">Medewerker</a>
+                    <a class="nav-link" href="admin.php"><?php echo $lang['medewerker'] ?></a>
                 </li>
             <?php endif?>
             <li>
                 <img src="images/globe.png" width="35px">
             </li>
             <li class="nav-item">
-                <a  href="#" data-lang="nl">NL</a>
+                <a  href="FAQ.php?lang=nl" data-lang="nl">NL</a>
             </li>/
             <li class="nav-item" >
-                <a  href="#" data-lang="en">ENG</a>
+                <a  href="FAQ.php?lang=en" data-lang="en">ENG</a>
             </li>
 
 
             <?php if (isset($_SESSION['user'])) : ?>
                 <div class="success" style="margin-left: 400px; margin-top: 45px; margin-bottom: 45px;">
                     <li class="nav-item" >
-                        Ingelogd als <?php echo $_SESSION['user'];?> --- <a style="color: red" href="index.php?logout='1'">Log uit</a>
+                        <p>  <?php echo $lang['Loggedin'] ?></p> <?php echo $_SESSION['user'];?> --- <a style="color: red" href="index.php?logout='1'"> <?php echo $lang['logout'] ?></a>
                     </li>
                 </div>
             <?php endif?>

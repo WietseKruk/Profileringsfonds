@@ -30,40 +30,42 @@ if(isset($_GET['logout'])){session_destroy(); unset($_SESSION['user']); unset($_
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="index.php">Startpagina</a>
+                <a class="nav-link" href="index.php"><?php echo $lang['startpagina'] ?></a>
             </li>
             <li class="nav-item">
-                <a method="post" class="nav-link" href="formulier.php" name="start_form">Start aanvraag</a>
+                <a method="post" class="nav-link" href="formulier.php" name="start_form"><?php echo $lang['startaanvraag'] ?></a>
             </li>
+
+
             <li class="nav-item">
-                <a class="nav-link" href="FAQ.php">FAQ</a>
+                <a class="nav-link" href="FAQ.php"><?php echo $lang['faq'] ?></a>
             </li>
 
             <?php if (!isset($_SESSION['user'])) : ?>
                 <li class="nav-item">
-                    <a class="nav-link" href="login.php">Login</a>
+                    <a class="nav-link" href="login.php"><?php echo $lang['login'] ?></a>
                 </li>
             <?php endif?>
             <?php if(isset($_SESSION['admin'])) : ?>
                 <li>
-                    <a class="nav-link" href="admin.php">Medewerker</a>
+                    <a class="nav-link" href="admin.php"><?php echo $lang['medewerker'] ?></a>
                 </li>
             <?php endif?>
             <li>
                 <img src="images/globe.png" width="35px">
             </li>
             <li class="nav-item">
-                <a  href="#" data-lang="nl">NL</a>
+                <a  href="formulier.php?lang=nl" data-lang="nl">NL</a>
             </li>/
             <li class="nav-item" >
-                <a  href="#" data-lang="en">ENG</a>
+                <a  href="formulier.php?lang=en" data-lang="en">ENG</a>
             </li>
 
 
             <?php if (isset($_SESSION['user'])) : ?>
                 <div class="success" style="margin-left: 400px; margin-top: 45px; margin-bottom: 45px;">
                     <li class="nav-item" >
-                        Ingelogd als <?php echo $_SESSION['user'];?> --- <a style="color: red" href="index.php?logout='1'">Log uit</a>
+                        <p>  <?php echo $lang['Loggedin'] ?></p> <?php echo $_SESSION['user'];?> --- <a style="color: red" href="index.php?logout='1'"> <?php echo $lang['logout'] ?></a>
                     </li>
                 </div>
             <?php endif?>
@@ -72,6 +74,7 @@ if(isset($_GET['logout'])){session_destroy(); unset($_SESSION['user']); unset($_
     <form class="search form-inline my-2 my-lg-0" action="search.php">
         <input type="search" placeholder="Search.." name="search">
         <button type="submit"><i class="fa fa-search"></i></button>
+    </form>
     </form>
 </nav>
 <!--END NAVBAR-->
@@ -84,7 +87,7 @@ if(isset($_GET['logout'])){session_destroy(); unset($_SESSION['user']); unset($_
 <form method="post" enctype="multipart/form-data" >
 <?php include ('errors.php')?>
     <div align ="center" class="formvragen">
-       <p><b>Studentnummer</b>
+       <p><b><?php echo $lang['studentennr'] ?></b>
         <input type="text" name="studentnummer">
            <input type="hidden" name="1" value="1"></p>
         <div id="hover-div">
@@ -95,7 +98,7 @@ if(isset($_GET['logout'])){session_destroy(); unset($_SESSION['user']); unset($_
         </div>
     </div>
     <div align ="center" class="formvragen">
-        <p><b>Achternaam</b>
+        <p><b><?php echo $lang['achternaam'] ?></b>
 
             <input type="text" name="achternaam"></p>
         <div id="hover-div">
@@ -106,7 +109,7 @@ if(isset($_GET['logout'])){session_destroy(); unset($_SESSION['user']); unset($_
         </div>
     </div>
     <div align ="center" class="formvragen">
-        <p><b>Roepnaam</b>
+        <p><b><?php echo $lang['voornaam'] ?></b>
             <input type="text" name="roepnaam"></p>
         <div id="hover-div">
             <i class="fas fa-info-circle"></i>
@@ -116,7 +119,7 @@ if(isset($_GET['logout'])){session_destroy(); unset($_SESSION['user']); unset($_
         </div>
     </div>
     <div align ="center" class="formvragen">
-        <p><b>Geboortedatum</b>
+        <p><b><?php echo $lang['geboorte'] ?></b>
             <input type="text" name="geboortedatum"></p>
         <div id="hover-div">
             <i class="fas fa-info-circle"></i>
