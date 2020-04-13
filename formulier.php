@@ -165,9 +165,9 @@ if(isset($_GET['logout'])){session_destroy(); unset($_SESSION['user']); unset($_
     <div align ="center" class="input-group">
         <p><b>Heb je de studie tussendoor onderbroken</b>
             <input type="radio" id="ja" name="onderbroken" value="ja">
-            <label for="ja">Ja</label><br>
+            <label>Ja</label><br>
             <input type="radio" id="nee" name="onderbroken" value="nee">
-            <label for="nee">Nee</label><br>
+            <label>Nee</label><br>
     </div>
     <div align ="center" class="input-group">
         <p><b>Heb jij je gedurende de studieonderbreking
@@ -207,6 +207,79 @@ if(isset($_GET['logout'])){session_destroy(); unset($_SESSION['user']); unset($_
             <input type="radio" id="ouder Jaars" name="aanleiding" value="optie7">
             <label for="optie7">activiteiten op bestuurlijk of maatschappelijk gebied die naar het oordeel van het College van
                 Bestuur mede in het belang zijn van de hogeschool of van het onderwijs dat de student volgt;</label><br>
+    </div>
+    <div align ="center" class="input-group">
+        <p><b>Hoeveel maanden studievertraging heb je opgelopen
+                als gevolg van de hierboven aangegeven bijzondere
+                omstandigheid c.q. omstandigheden?</b>
+            <input type="text" name="maanden"></p>
+    </div>
+    <div align ="center" class="input-group">
+        <p><b>Onder welk stelsel van DUO val jij?</b>
+            <input type="radio" id="prestatiebeurs" name="duo" value="prestatiebeurs">
+            <label>Prestatiebeurs</label><br>
+            <input type="radio" id="leenstelsel" name="duo" value="leenstelsel">
+            <label>Leenstelsel</label><br></p>
+    </div>
+    <div align ="center" class="input-group">
+        <p><b>Heb je recht (gehad) op een extra jaar
+                studiefinanciering/aanvullende beurs via DUO?. Zo ja, voeg het bewijs toe bij de bijlagen</b>
+            <input type="radio" id="ja" name="extra" value="ja">
+            <label>Ja</label><br>
+            <input type="radio" id="nee" name="extra" value="nee">
+            <label>Nee</label><br></p>
+    </div>
+    <div align ="center" class="input-group">
+        <p><b>Indien je een extra jaar studiefinanciering hebt
+                aangevraagd, per wanneer is deze ingegaan? Vermeld
+                datum.</b>
+            <input type="text" name="ingegaan"></p>
+    </div>
+    <div align ="center" class="input-group">
+        <p><b>Hoeveel maanden financiële ondersteuning vraag je
+                aan? (Maximaal 12)</b>
+            <input type="text" name="financieel"></p>
+    </div>
+    <div align ="center" class="input-group">
+        <p><b>Heb je eerder financiële ondersteuning uit het
+                Profileringsfonds ontvangen? En zoja, hoeveel maanden in welk jaar</b>
+            <input type="text" name="eerder"></p>
+    </div>
+    <div align ="center" class="input-group">
+        <p><b>Waaruit bestond de door jou aangevoerde bijzondere omstandigheid?</b>
+            <input type="text" name="waaruit"></p>
+    </div>
+    <div align ="center" class="input-group">
+        <p><b>Wanneer vond deze plaats en wanneer geëindigd?</b>
+            <input type="text" name="eindig"></p>
+    </div>
+    <div align ="center" class="input-group">
+        <p><b>Op welke datum en bij wie heb je melding gemaakt van deze bijzondere omstandigheid?</b>
+            <input type="text" name="melding"></p>
+    </div>
+    <div align ="center" class="input-group">
+        <p><b>Op welke datum en bij wie heb je de bijzondere omstandigheid eventueel afgemeld?</b>
+            <input type="text" name="afmeld"></p>
+    </div>
+    <div align ="center" class="input-group">
+        <p><b>Geef aan welke studieonderdelen in welke onderwijsperiode en in welk opleidingsjaar niet
+                konden worden gevolgd, voor welke studieonderdelen de mogelijkheid van een herkansing
+                bestaat en welke studieonderdelen –wanneer- dienen te worden overgelopen.</b>
+            <input type="text" name="studieond"></p>
+    </div>
+    <div align ="center" class="input-group">
+        <p><b>Wat is de totale duur van de vertraging?</b>
+            <input type="text" name="duur"></p>
+    </div>
+    <div align ="center" class="input-group">
+        <p><b>Op welke wijze heeft de bijzondere omstandigheid het verloop van je studie beïnvloed?</b>
+            <input type="text" name="verloop"></p>
+    </div>
+    <div align ="center" class="input-group">
+        <p><b>Op welke wijze heb je geprobeerd de negatieve gevolgen van de bijzondere omstandigheid voor
+                jouw studie dan wel studiefinanciering 1 zoveel mogelijk te beperken dan wel te voorkomen
+                (raadplegen decaan, tussentijds uitschrijven/stopzetten studiefinanciering)?</b>
+            <input type="text" name="wijze"></p>
     </div>
 
 

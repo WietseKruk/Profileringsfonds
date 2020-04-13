@@ -120,6 +120,21 @@ if(isset($_POST['submit_form'])){
     $andere = $_POST['andere'];
     $instel = $_POST['instelling'];
     $aanl = $_POST['aanleiding'];
+    $maand = $_POST['maanden'];
+    $duo = $_POST['duo'];
+    $extra = $_POST['extra'];
+    $ingeg = $_POST['ingegaan'];
+    $finance = $_POST['financieel'];
+    $eerder = $_POST['eerder'];
+    $waaruit = $_POST['waaruit'];
+    $eindig = $_POST['eindig'];
+    $melding = $_POST['melding'];
+    $afmeld = $_POST['afmeld'];
+    $studieond = $_POST['studieond'];
+    $duur = $_POST['duur'];
+    $verloop = $_POST['verloop'];
+    $wijze = $_POST['wijze'];
+
 //    $f_name = $_POST[''];
 //    $f_name = $_POST[''];
 //    $f_name = $_POST[''];
@@ -205,6 +220,48 @@ if(isset($_POST['submit_form'])){
 
     $pdf->Cell(65,10,"Vraag 11",1,0);
     $pdf->Cell(75,10,$aanl,1,1);
+
+    $pdf->Cell(65,10,"Vraag 12",1,0);
+    $pdf->Cell(75,10,$maand,1,1);
+
+    $pdf->Cell(65,10,"Vraag 13",1,0);
+    $pdf->Cell(75,10,$duo,1,1);
+
+    $pdf->Cell(65,10,"Vraag 14",1,0);
+    $pdf->Cell(75,10,$extra,1,1);
+
+    $pdf->Cell(65,10,"Vraag 15",1,0);
+    $pdf->Cell(75,10,$ingeg,1,1);
+
+    $pdf->Cell(65,10,"Vraag 16",1,0);
+    $pdf->Cell(75,10,$finance,1,1);
+
+    $pdf->Cell(65,10,"Vraag 17",1,0);
+    $pdf->Cell(75,10,$eerder,1,1);
+
+    $pdf->Cell(65,10,"Vraag 18",1,0);
+    $pdf->Cell(75,10,$waaruit,1,1);
+
+    $pdf->Cell(65,10,"Vraag 19",1,0);
+    $pdf->Cell(75,10,$eindig,1,1);
+
+    $pdf->Cell(65,10,"Vraag 20",1,0);
+    $pdf->Cell(75,10,$melding,1,1);
+
+    $pdf->Cell(65,10,"Vraag 21",1,0);
+    $pdf->Cell(75,10,$afmeld,1,1);
+
+    $pdf->Cell(65,10,"Vraag 22",1,0);
+    $pdf->Cell(75,10,$studieond,1,1);
+
+    $pdf->Cell(65,10,"Vraag 23",1,0);
+    $pdf->Cell(75,10,$duur,1,1);
+
+    $pdf->Cell(65,10,"Vraag 24",1,0);
+    $pdf->Cell(75,10,$verloop,1,1);
+
+    $pdf->Cell(65,10,"Vraag 25",1,0);
+    $pdf->Cell(75,10,$wijze,1,1);
 
 
 
