@@ -95,8 +95,8 @@ if(isset($_GET['logout'])){session_destroy(); unset($_SESSION['user']); unset($_
                     <div class="row">
                         <div class="col-sm-4">
                            <p><b><?php echo $lang['studentennr'] ?></b>
-                            <input type="text" name="studentnummer">
-                               <input type="hidden" name="1" value="1"></p>
+                            <input type="text" name="studentnummer" size="50">
+                               <input type="hidden" name="1" value="1" ></p>
                         </div>
                         <div class="col-sm-4">
                             <div id="hover-div">
@@ -112,7 +112,7 @@ if(isset($_GET['logout'])){session_destroy(); unset($_SESSION['user']); unset($_
                     <div class="row">
                         <div class="col-sm-4">
                             <p><b><?php echo $lang['achternaam'] ?></b>
-                            <input type="text" name="achternaam"></p>
+                            <input type="text" name="achternaam" size="50"></p>
                         </div>
                         <div class="col-sm-4">
                             <div id="hover-div">
@@ -128,7 +128,7 @@ if(isset($_GET['logout'])){session_destroy(); unset($_SESSION['user']); unset($_
                     <div class="row">
                         <div class="col-sm-4">
                             <p><b><?php echo $lang['voornaam'] ?></b>
-                                <input type="text" name="roepnaam"></p>
+                                <input type="text" name="roepnaam" size="50"></p>
                         </div>
                         <div class="col-sm-4">
                             <div id="hover-div">
@@ -144,7 +144,7 @@ if(isset($_GET['logout'])){session_destroy(); unset($_SESSION['user']); unset($_
                     <div class="row">
                         <div class="col-sm-4">
                             <p><b><?php echo $lang['geboorte'] ?></b>
-                                <input type="text" name="geboortedatum"></p>
+                                <input type="text" name="geboortedatum" size="50"></p>
                         </div>
                         <div class="col-sm-4">
                             <div id="hover-div">
@@ -159,8 +159,8 @@ if(isset($_GET['logout'])){session_destroy(); unset($_SESSION['user']); unset($_
                 <div class="formvragen">
                     <div class="row">
                         <div class="col-sm-4">
-                            <p><b>Adresgegevens</b>
-                                <input type="text" name="adres"></p>
+                            <p><b>5. Adresgegevens</b>
+                                <input type="text" name="adres" size="50"></p>
                         </div>
                         <div class="col-sm-4">
                             <div id="hover-div">
@@ -175,8 +175,8 @@ if(isset($_GET['logout'])){session_destroy(); unset($_SESSION['user']); unset($_
                 <div class="formvragen">
                     <div class="row">
                         <div class="col-sm-4">
-                            <p><b>Postcode</b>
-                                <input type="text" name="postcode"></p>
+                            <p><b>6. Postcode</b>
+                                <input type="text" name="postcode" size="50"></p>
                         </div>
                         <div class="col-sm-4">
                             <div id="hover-div">
@@ -193,8 +193,8 @@ if(isset($_GET['logout'])){session_destroy(); unset($_SESSION['user']); unset($_
                 <div class="formvragen">
                     <div class="row">
                         <div class="col-sm-4">
-                           <p><b>Woonplaats</b>
-                               <input type="text" name="woonplaats"></p>
+                           <p><b>7. Woonplaats</b>
+                               <input type="text" name="woonplaats" size="50"></p>
                         </div>
                         <div class="col-sm-4">
                             <div id="hover-div">
@@ -209,8 +209,8 @@ if(isset($_GET['logout'])){session_destroy(); unset($_SESSION['user']); unset($_
                 <div class="formvragen">
                     <div class="row">
                         <div class="col-sm-4">
-                            <p><b>Telefoonnummer</b>
-                                <input type="text" name="tnummer"></p>
+                            <p><b>8. Telefoonnummer</b>
+                                <input type="text" name="tnummer" size="50"></p>
                         </div>
                         <div class="col-sm-4">
                             <div id="hover-div">
@@ -225,8 +225,8 @@ if(isset($_GET['logout'])){session_destroy(); unset($_SESSION['user']); unset($_
                 <div class="formvragen">
                     <div class="row">
                         <div class="col-sm-4">
-                            <p><b>E-mailadres</b>
-                            <input type="text" name="email"></p>
+                            <p><b>9. E-mailadres</b>
+                            <input type="text" name="email" size="50"></p>
                         </div>
                         <div class="col-sm-4">
                             <div id="hover-div">
@@ -241,8 +241,8 @@ if(isset($_GET['logout'])){session_destroy(); unset($_SESSION['user']); unset($_
                 <div class="formvragen">
                     <div class="row">
                         <div class="col-sm-4">
-                            <p><b>BSN-nummer</b>
-                                <input type="text" name="bsn"></p>
+                            <p><b>10. BSN-nummer</b>
+                                <input type="text" name="bsn" size="50"></p>
                         </div>
                         <div class="col-sm-4">
                             <div id="hover-div">
@@ -257,8 +257,8 @@ if(isset($_GET['logout'])){session_destroy(); unset($_SESSION['user']); unset($_
                 <div class="formvragen">
                     <div class="row">
                         <div class="col-sm-4">
-                            <p><b>IBAN rekeningnummer</b>
-                                <input type="text" name="iban"></p>
+                            <p><b>11. IBAN rekeningnummer</b>
+                                <input type="text" name="iban" size="50"></p>
                         </div>
                         <div class="col-sm-4">
                             <div id="hover-div">
@@ -280,10 +280,10 @@ if(isset($_GET['logout'])){session_destroy(); unset($_SESSION['user']); unset($_
                 <div class="formvragen">
                     <div class="row">
                         <div class="col-sm-12">
-                            <p><b>Sta jij op het moment van aanvragen ingeschreven bij NHL Stenden Hogeschool?</b></p>
+                            <p><b>12. Sta jij op het moment van aanvragen ingeschreven bij NHL Stenden Hogeschool?</b></p>
                         </div>
                         <div class="col-sm-10">
-                                <input type="radio" id="ja" name="ingeschreven" value="ja">
+                                <input type="radio" id="ja" name="ingeschreven" value="ja" checked="checked">
                                 <label>Ja</label><br>
                                 <input type="radio" id="nee" name="ingeschreven" value="nee">
                                 <label>Nee</label><br>
@@ -301,8 +301,8 @@ if(isset($_GET['logout'])){session_destroy(); unset($_SESSION['user']); unset($_
                 <div class="formvragen">
                     <div class="row">
                         <div class="col-sm-10">
-                            <p><b>Voor welke opleiding sta jij op dit moment ingeschreven?</b></p>
-                            <input type="text" name="opleiding"></p>
+                            <p><b>13. Voor welke opleiding sta jij op dit moment ingeschreven?</b></p>
+                            <input size="50" type="text"  name="opleiding"></p>
                         </div>
                         <div class="col-sm-2">
                             <div id="hover-div">
@@ -317,11 +317,11 @@ if(isset($_GET['logout'])){session_destroy(); unset($_SESSION['user']); unset($_
                 <div class="formvragen">
                     <div class="row">
                         <div class="col-sm-12">
-                            <p><b>Welke opleidingsvariant volg jij?</b>
+                            <p><b>14. Welke opleidingsvariant volg jij?</b>
                             </p>
                         </div>
                         <div class="col-sm-10">
-                                <input type="radio" id="voltijd" name="variant" value="voltijd">
+                                <input type="radio" id="voltijd" name="variant" value="voltijd" checked="checked">
                                 <label>Voltijd</label><br>
                                 <input type="radio" id="deeltijd" name="variant" value="deeltijd">
                                 <label>Deeltijd</label><br>
@@ -341,8 +341,8 @@ if(isset($_GET['logout'])){session_destroy(); unset($_SESSION['user']); unset($_
                 <div class="formvragen">
                     <div class="row">
                         <div class="col-sm-10">
-                            <p><b>Per wanneer ben je met je studie gestart?</b></p>
-                            <input type="text" name="gestart"></p>
+                            <p><b>15. Per wanneer ben je met je studie gestart?</b></p>
+                            <input type="text" name="gestart" size="50"></p>
                         </div>
                         <div class="col-sm-2">
                             <div id="hover-div">
@@ -357,7 +357,7 @@ if(isset($_GET['logout'])){session_destroy(); unset($_SESSION['user']); unset($_
                 <div class="formvragen">
                     <div class="row">
                         <div class="col-sm-10">
-                            <p><b>In welk studiejaar zit je?</b>
+                            <p><b>16. In welk studiejaar zit je?</b>
                             </p>
                         </div>
                         <div class="col-sm-2">
@@ -369,7 +369,7 @@ if(isset($_GET['logout'])){session_destroy(); unset($_SESSION['user']); unset($_
                             </div>
                         </div>
                         <div class="col-sm-12">
-                                <input type="radio" id="1e jaars" name="jaar" value="1e jaars">
+                                <input type="radio" id="1e jaars" name="jaar" value="1e jaars" checked="checked">
                                 <label>1e jaars</label><br>
                                 <input type="radio" id="2e jaars" name="jaar" value="2e jaars">
                                 <label>2e jaars</label><br>
@@ -387,7 +387,7 @@ if(isset($_GET['logout'])){session_destroy(); unset($_SESSION['user']); unset($_
                 <div class="formvragen">
                     <div class="row">
                         <div class="col-sm-10">
-                            <p><b>Heb je de studie tussendoor onderbroken</b>
+                            <p><b>17. Heb je de studie tussendoor onderbroken</b>
                             </p>
                         </div>
                         <div class="col-sm-2">
@@ -399,7 +399,7 @@ if(isset($_GET['logout'])){session_destroy(); unset($_SESSION['user']); unset($_
                             </div>
                         </div>
                         <div class="col-sm-12">
-                                <input type="radio" id="ja" name="onderbroken" value="ja">
+                                <input type="radio" id="ja" name="onderbroken" value="ja" checked="checked">
                                 <label>Ja</label><br>
                                 <input type="radio" id="nee" name="onderbroken" value="nee">
                                 <label>Nee</label><br>
@@ -409,7 +409,7 @@ if(isset($_GET['logout'])){session_destroy(); unset($_SESSION['user']); unset($_
                 <div class="formvragen">
                     <div class="row">
                         <div class="col-sm-10">
-                            <p><b>Heb jij je gedurende de studieonderbreking
+                            <p><b>18. Heb jij je gedurende de studieonderbreking
                                     ook uitgeschreven bij NHL Stenden?</b>
                             </p>
                         </div>
@@ -422,7 +422,7 @@ if(isset($_GET['logout'])){session_destroy(); unset($_SESSION['user']); unset($_
                             </div>
                         </div>
                         <div class="col-sm-12">
-                                <input type="radio" id="ja" name="uitgeschreven" value="ja">
+                                <input type="radio" id="ja" name="uitgeschreven" value="ja" checked="checked">
                                 <label for="ja">Ja</label><br>
                                 <input type="radio" id="nee" name="uitgeschreven" value="nee">
                                 <label for="nee">Nee</label><br>
@@ -432,9 +432,9 @@ if(isset($_GET['logout'])){session_destroy(); unset($_SESSION['user']); unset($_
                 <div class="formvragen">
                     <div class="row">
                         <div class="col-sm-10">
-                            <p><b>Heb je ook voor andere studie(s)
+                            <p><b>19. Heb je ook voor andere studie(s)
                                     ingeschreven gestaan bij NHL Stenden? En zo ja, welke.</b>
-                                <input type="text" name="andere"></p>
+                                <input type="text" name="andere" size="50"></p>
                         </div>
                         <div class="col-sm-2">
                             <div id="hover-div">
@@ -449,9 +449,9 @@ if(isset($_GET['logout'])){session_destroy(); unset($_SESSION['user']); unset($_
                 <div class="formvragen">
                     <div class="row">
                         <div class="col-sm-10">
-                            <p><b>Heb je eerder een inschrijving bij een
+                            <p><b>20. Heb je eerder een inschrijving bij een
                                     andere instelling (HBO/Universiteit) gehad? Zo ja, bij welke instelling, en welke periode</b>
-                                <input type="text" name="instelling"></p>
+                                <input type="text" name="instelling" size="50"></p>
                         </div>
                         <div class="col-sm-2">
                             <div id="hover-div">
@@ -473,7 +473,7 @@ if(isset($_GET['logout'])){session_destroy(); unset($_SESSION['user']); unset($_
                 <div class="formvragen">
                     <div class="row">
                         <div class="col-sm-10">
-                            <p><b>Bijzondere omstandigheden die aanleiding is tot deze aanvraag (kruis aan welke van
+                            <p><b>21. Bijzondere omstandigheden die aanleiding is tot deze aanvraag (kruis aan welke van
                                     toepassing is):</b>
                             </p>
                         </div>
@@ -488,7 +488,7 @@ if(isset($_GET['logout'])){session_destroy(); unset($_SESSION['user']); unset($_
                     </div>
                     <div class="row">
                         <div class="col-sm-4">
-                            <input type="radio" id="optie1" name="aanleiding" value="optie1">
+                            <input type="radio" id="optie1" name="aanleiding" value="optie1" checked="checked">
                             <label>Ziekte of zwangerschap en bevalling;</label><br><br>
                             <input type="radio" id="2e" name="aanleiding" value="optie2">
                             <label>Een functiestoornis, handicap of chronische ziekte;</label><br><br>
@@ -523,10 +523,10 @@ if(isset($_GET['logout'])){session_destroy(); unset($_SESSION['user']); unset($_
             <div class="formvragen">
                 <div class="row">
                     <div class="col-sm-11">
-                        <p><b>Hoeveel maanden studievertraging heb je opgelopen
+                        <p><b>22. Hoeveel maanden studievertraging heb je opgelopen
                                 als gevolg van de hierboven aangegeven bijzondere
                                 omstandigheid c.q. omstandigheden?</b><br>
-                            <input type="text" name="maanden"></p>
+                            <input type="text" name="maanden" size="120"></p>
                     </div>
                     <div class="col-sm-1">
                         <div id="hover-div">
@@ -543,7 +543,7 @@ if(isset($_GET['logout'])){session_destroy(); unset($_SESSION['user']); unset($_
                     <div class="formvragen">
                         <div class="row">
                             <div class="col-sm-8">
-                                <p><b>Onder welk stelsel van DUO val jij?</b>
+                                <p><b>23. Onder welk stelsel van DUO val jij?</b>
                                 </p>
                             </div>
                             <div class="col-sm-2">
@@ -555,7 +555,7 @@ if(isset($_GET['logout'])){session_destroy(); unset($_SESSION['user']); unset($_
                                 </div>
                             </div>
                             <div class="col-sm-12">
-                                <input type="radio" id="prestatiebeurs" name="duo" value="prestatiebeurs">
+                                <input type="radio" id="prestatiebeurs" name="duo" value="prestatiebeurs" checked="checked">
                                 <label>Prestatiebeurs</label><br>
                                 <input type="radio" id="leenstelsel" name="duo" value="leenstelsel">
                                 <label>Leenstelsel</label><br></p>
@@ -568,7 +568,7 @@ if(isset($_GET['logout'])){session_destroy(); unset($_SESSION['user']); unset($_
                     <div class="formvragen">
                         <div class="row">
                             <div class="col-sm-10">
-                                <p><b>Heb je recht (gehad) op een extra jaar
+                                <p><b>24. Heb je recht (gehad) op een extra jaar
                                         studiefinanciering/aanvullende beurs via DUO?. Zo ja, voeg het bewijs toe bij de bijlagen</b>
                                 </p>
                             </div>
@@ -581,7 +581,7 @@ if(isset($_GET['logout'])){session_destroy(); unset($_SESSION['user']); unset($_
                                 </div>
                             </div>
                             <div class="col-sm-12">
-                                    <input type="radio" id="ja" name="extra" value="ja">
+                                    <input type="radio" id="ja" name="extra" value="ja" checked="checked">
                                     <label>Ja</label><br>
                                     <input type="radio" id="nee" name="extra" value="nee">
                                     <label>Nee</label><br></p>
@@ -593,10 +593,10 @@ if(isset($_GET['logout'])){session_destroy(); unset($_SESSION['user']); unset($_
             <div class="formvragen">
                 <div class="row">
                     <div class="col-sm-10">
-                        <p><b>Indien je een extra jaar studiefinanciering hebt
+                        <p><b>25. Indien je een extra jaar studiefinanciering hebt
                                 aangevraagd, per wanneer is deze ingegaan? Vermeld
                                 datum.</b>
-                            <input type="text" name="ingegaan"></p>
+                            <input type="text" name="ingegaan" size="120"></p>
                     </div>
                     <div class="col-sm-2">
                         <div id="hover-div">
@@ -611,9 +611,9 @@ if(isset($_GET['logout'])){session_destroy(); unset($_SESSION['user']); unset($_
             <div class="formvragen">
                 <div class="row">
                     <div class="col-sm-10">
-                        <p><b>Hoeveel maanden financiële ondersteuning vraag je
+                        <p><b>26. Hoeveel maanden financiële ondersteuning vraag je
                                 aan? (Maximaal 12)</b><br>
-                            <input type="text" name="financieel"></p>
+                            <input type="text" name="financieel" size="120"></p>
                     </div>
                     <div class="col-sm-2">
                         <div id="hover-div">
@@ -628,9 +628,9 @@ if(isset($_GET['logout'])){session_destroy(); unset($_SESSION['user']); unset($_
             <div class="formvragen">
                 <div class="row">
                     <div class="col-sm-10">
-                    <p><b>Heb je eerder financiële ondersteuning uit het
+                    <p><b>27. Heb je eerder financiële ondersteuning uit het
                             Profileringsfonds ontvangen? En zoja, hoeveel maanden in welk jaar</b>
-                        <input type="text" name="eerder"></p>
+                        <input type="text" name="eerder" size="120"></p>
                     </div>
                     <div class="col-sm-2">
                         <div id="hover-div">
@@ -645,8 +645,8 @@ if(isset($_GET['logout'])){session_destroy(); unset($_SESSION['user']); unset($_
             <div class="formvragen">
                 <div class="row">
                     <div class="col-sm-10">
-                        <p><b>Waaruit bestond de door jou aangevoerde bijzondere omstandigheid?</b><br>
-                            <input type="text" name="waaruit"></p>
+                        <p><b>28. Waaruit bestond de door jou aangevoerde bijzondere omstandigheid?</b><br>
+                            <input type="text" name="waaruit" size="120"></p>
                     </div>
                     <div class="col-sm-2">
                         <div id="hover-div">
@@ -661,8 +661,8 @@ if(isset($_GET['logout'])){session_destroy(); unset($_SESSION['user']); unset($_
             <div class="formvragen">
                 <div class="row">
                     <div class="col-sm-10">
-                        <p><b>Wanneer vond deze plaats en wanneer geëindigd?</b><br>
-                            <input type="text" name="eindig"></p>
+                        <p><b>29. Wanneer vond deze plaats en wanneer geëindigd?</b><br>
+                            <input type="text" name="eindig" size="120"></p>
                     </div>
                     <div class="col-sm-2">
                         <div id="hover-div">
@@ -677,8 +677,8 @@ if(isset($_GET['logout'])){session_destroy(); unset($_SESSION['user']); unset($_
             <div class="formvragen">
                 <div class="row">
                     <div class="col-sm-10">
-                        <p><b>Op welke datum en bij wie heb je melding gemaakt van deze bijzondere omstandigheid?</b><br>
-                            <input type="text" name="melding"></p>
+                        <p><b>30. Op welke datum en bij wie heb je melding gemaakt van deze bijzondere omstandigheid?</b><br>
+                            <input type="text" name="melding" size="120"></p>
                     </div>
                     <div class="col-sm-2">
                         <div id="hover-div">
@@ -693,8 +693,8 @@ if(isset($_GET['logout'])){session_destroy(); unset($_SESSION['user']); unset($_
             <div class="formvragen">
                 <div class="row">
                     <div class="col-sm-10">
-                        <p><b>Op welke datum en bij wie heb je de bijzondere omstandigheid eventueel afgemeld?</b><br>
-                            <input type="text" name="afmeld"></p>
+                        <p><b>31. Op welke datum en bij wie heb je de bijzondere omstandigheid eventueel afgemeld?</b><br>
+                            <input type="text" name="afmeld" size="120"></p>
                     </div>
                     <div class="col-sm-2">
                         <div id="hover-div">
@@ -709,10 +709,10 @@ if(isset($_GET['logout'])){session_destroy(); unset($_SESSION['user']); unset($_
             <div class="formvragen">
                 <div class="row">
                     <div class="col-sm-10">
-                        <p><b>Geef aan welke studieonderdelen in welke onderwijsperiode en in welk opleidingsjaar niet
+                        <p><b> 32. Geef aan welke studieonderdelen in welke onderwijsperiode en in welk opleidingsjaar niet
                                 konden worden gevolgd, voor welke studieonderdelen de mogelijkheid van een herkansing
                                 bestaat en welke studieonderdelen –wanneer- dienen te worden overgelopen.</b><br>
-                            <input type="text" name="studieond"></p>
+                            <input type="text" name="studieond" size="120"></p>
                     </div>
                     <div class="col-sm-2">
                         <div id="hover-div">
@@ -727,8 +727,8 @@ if(isset($_GET['logout'])){session_destroy(); unset($_SESSION['user']); unset($_
             <div class="formvragen">
                 <div class="row">
                     <div class="col-sm-10">
-                        <p><b>Wat is de totale duur van de vertraging?</b><br>
-                            <input type="text" name="duur"></p>
+                        <p><b> 33. Wat is de totale duur van de vertraging?</b><br>
+                            <input type="text" name="duur" size="120"></p>
                     </div>
                     <div class="col-sm-2">
                         <div id="hover-div">
@@ -743,8 +743,8 @@ if(isset($_GET['logout'])){session_destroy(); unset($_SESSION['user']); unset($_
             <div class="formvragen">
                 <div class="row">
                     <div class="col-sm-10">
-                        <p><b>Op welke wijze heeft de bijzondere omstandigheid het verloop van je studie beïnvloed?</b><br>
-                            <input type="text" name="verloop"></p>
+                        <p><b> 34. Op welke wijze heeft de bijzondere omstandigheid het verloop van je studie beïnvloed?</b><br>
+                            <input type="text" name="verloop" size="120"></p>
                     </div>
                     <div class="col-sm-2">
                         <div id="hover-div">
@@ -759,10 +759,10 @@ if(isset($_GET['logout'])){session_destroy(); unset($_SESSION['user']); unset($_
             <div class="formvragen">
                 <div class="row">
                     <div class="col-sm-10">
-                        <p><b>Op welke wijze heb je geprobeerd de negatieve gevolgen van de bijzondere omstandigheid voor
+                        <p><b> 35. Op welke wijze heb je geprobeerd de negatieve gevolgen van de bijzondere omstandigheid voor
                                 jouw studie dan wel studiefinanciering 1 zoveel mogelijk te beperken dan wel te voorkomen
                                 (raadplegen decaan, tussentijds uitschrijven/stopzetten studiefinanciering)?</b><br>
-                            <input type="text" name="wijze"></p>
+                            <input type="text" name="wijze" size="120"></p>
                     </div>
                     <div class="col-sm-2">
                         <div id="hover-div">

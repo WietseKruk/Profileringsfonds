@@ -1,6 +1,7 @@
 <?php include('server.php')?>
 <?php
-if(isset($_GET['logout'])){session_destroy(); unset($_SESSION['user']); unset($_SESSION['id']); header('location: index.php');}?>
+if(isset($_GET['logout'])){session_destroy(); unset($_SESSION['user']); unset($_SESSION['id']); header('location: index.php');}
+?>
 
 <!--123PHP.Test.Email123@gmail.com profilering-->
 

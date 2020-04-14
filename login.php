@@ -1,5 +1,12 @@
 <?php include('server.php')?>
 <?php
+if (!isset($_SESSION['username'])) {
+    $_SESSION['msg'] = "You must log in first";
+    header('location: login.php');
+}
+?>
+
+<?php
 if(isset($_GET['logout'])){session_destroy(); unset($_SESSION['user']); unset($_SESSION['id']); header('location: index.php');}?>
 <!DOCTYPE html>
 <head>

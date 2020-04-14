@@ -9,9 +9,9 @@ $lang = array(
     "staraanvraag2" => "Start aanvraag",
     "Loggedin" => "Ingelogd als:",
     "logout" => "Uitloggen",
-    "studentennr" => "Studenten nummer",
-    "achternaam" => "achternaam",
-    "voornaam" => "Roepnaam",
-    "geboorte" => "Geboortedatum",
+    "studentennr" => "1. Studentnummer",
+    "achternaam" => "2. Achternaam",
+    "voornaam" => "3. Roepnaam",
+    "geboorte" => "4. Geboortedatum",
 
 );
