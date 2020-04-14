@@ -489,28 +489,28 @@ if(isset($_GET['logout'])){session_destroy(); unset($_SESSION['user']); unset($_
                     <div class="row">
                         <div class="col-sm-4">
                             <input type="radio" id="optie1" name="aanleiding" value="optie1" checked="checked">
-                            <label>Ziekte of zwangerschap en bevalling;</label><br><br>
+                            Ziekte of zwangerschap en bevalling;<br><br>
                             <input type="radio" id="2e" name="aanleiding" value="optie2">
-                            <label>Een functiestoornis, handicap of chronische ziekte;</label><br><br>
+                            Een functiestoornis, handicap of chronische ziekte;<br><br>
                             <input type="radio" id="3e" name="aanleiding" value="optie3">
-                            <label>bijzondere familieomstandigheden;</label><br><br>
+                            bijzondere familieomstandigheden;<br><br>
                             <input type="radio" id="4e" name="aanleiding" value="optie4">
-                            <label>Een onvoldoende studeerbare opleiding;</label><br><br>
+                            Een onvoldoende studeerbare opleiding;<br><br>
 
                             <input type="radio" id="ouder Jaars" name="aanleiding" value="optie5">
-                            <label>De door de hogeschool toegekende status van topsporter;</label><br><br>
+                           De door de hogeschool toegekende status van topsporter;<br><br>
                         </div>
                         <div class="col-sm-4">
                             <input type="radio" id="ouder Jaars" name="aanleiding" value="optie6">
-                            <label>Andere dan de in de hierboven genoemde onderdelen bedoelde omstandigheden die, indien
+                            Andere dan de in de hierboven genoemde onderdelen bedoelde omstandigheden die, indien
                                 een daarop gebaseerd verzoek om financiële ondersteuning door het College van Bestuur niet
-                                zou worden gehonoreerd, zouden leiden tot een onbillijkheid van overwegende aard.</label><br><br>
+                                zou worden gehonoreerd, zouden leiden tot een onbillijkheid van overwegende aard.<br><br>
 
                         </div>
                         <div class="col-sm-4">
                             <input type="radio" id="ouder Jaars" name="aanleiding" value="optie7">
-                            <label for="optie7">Activiteiten op bestuurlijk of maatschappelijk gebied die naar het oordeel van het College van
-                                Bestuur mede in het belang zijn van de hogeschool of van het onderwijs dat de student volgt;</label><br><br>
+                            Activiteiten op bestuurlijk of maatschappelijk gebied die naar het oordeel van het College van
+                                Bestuur mede in het belang zijn van de hogeschool of van het onderwijs dat de student volgt;<br><br>
                         </div>
                     </div>
                 </div>
