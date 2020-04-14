@@ -400,8 +400,8 @@ if(isset($_POST['submit_form'])) {
 
         $id = $_SESSION['id'];
         $user = $_SESSION['user'];
-        $fullpath = "C:\wamp64\www\profileringsfonds1\public_html/public_html" . $id . ".pdf";
-        $dbpath = "Profileringsfonds/public_html/" . $id . ".pdf";
+        $fullpath = "C:\wamp64\www\periode3\Selecta\Profileringsfonds\public_html" . $id . ".pdf";
+        $dbpath = "C:\wamp64\www\periode3\Selecta\Profileringsfonds\public_html" . $id . ".pdf";
 
         if (!empty($id)) {
             $pdf->Output("$fullpath", "F");
