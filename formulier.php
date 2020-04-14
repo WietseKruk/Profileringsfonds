@@ -1,6 +1,9 @@
 <?php include('server.php')?>
 <?php
+if(!isset($_SESSION['user'])){
+    header('location: login.php');
 
+}
 if(isset($_GET['logout'])){session_destroy(); unset($_SESSION['user']); unset($_SESSION['id']); header('location: index.php');}?>
 <!DOCTYPE html>
 <head>

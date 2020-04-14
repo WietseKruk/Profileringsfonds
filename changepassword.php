@@ -1,5 +1,6 @@
 <?php include('server.php')?>
-<html>
+
+<!DOCTYPE html>
 <head>
     <title>Verander uw wachtwoord</title>
     <link rel="stylesheet" href="style.css">
@@ -18,73 +19,20 @@
 
 </head>
 <body style="background: url(images/bg-page-white.png) no-repeat center center fixed; background-size: cover; ">
-<!-- navbar -->
-<!--<nav class="navbar navbar-expand-sm justify-content-between" >-->
-<!--     Links -->
-<!--    <div id="links">-->
-<!--        <ul class="navbar-nav">-->
-<!--            <li class="nav-item">-->
-<!--                <a class="navbar-brand" href="index.php">-->
-<!--                    <img src="images/Logo1.png" alt="logo" style="width:150px;">-->
-<!--                </a>-->
-<!--            </li>-->
-<!--            <li class="nav-item">-->
-<!--                <a method="post" class="nav-link" href="formulier.php" name="start_form">Start aanvraag</a>-->
-<!--            </li>-->
-<!--            <li class="nav-item">-->
-<!--                <a class="nav-link" href="info.php">Informatie</a>-->
-<!--            </li>-->
-<!--            <li class="nav-item">-->
-<!--                <a class="nav-link" href="FAQ.php">FAQ</a>-->
-<!--            </li>-->
-<!---->
-<!--            --><?php //if (!isset($_SESSION['user'])) : ?>
-<!--                <li class="nav-item">-->
-<!--                    <a class="nav-link" href="login.php">Login</a>-->
-<!--                </li>-->
-<!--            --><?php //endif?>
-<!--            --><?php //if(isset($_SESSION['admin'])) : ?>
-<!--                <li>-->
-<!--                    <a class="nav-link" href="admin.php">admin</a>-->
-<!--                </li>-->
-<!--            --><?php //endif?>
-<!--            <li>-->
-<!--                <img src="images/globe.png" width="35px">-->
-<!--            </li>-->
-<!--            <li class="nav-item">-->
-<!--                <a  href="#" data-lang="nl">NL</a>-->
-<!--            </li>/-->
-<!--            <li class="nav-item" >-->
-<!--                <a  href="#" data-lang="en">ENG</a>-->
-<!--            </li>-->
-<!---->
-<!---->
-<!--            --><?php //if (isset($_SESSION['user'])) : ?>
-<!--                <div class="success" style="margin-left: 400px; margin-top: 45px; margin-bottom: 45px;">-->
-<!--                    <li class="nav-item" >-->
-<!--                        Ingelogd als --><?php //echo $_SESSION['user'];?><!-- --- <a style="color: red" href="index.php?logout='1'">Log uit</a>-->
-<!--                    </li>-->
-<!--                </div>-->
-<!--            --><?php //endif?>
-<!--        </ul>-->
-<!--    </div>-->
-<!--    <form class="search form-inline my-2 my-lg-0" action="search.php">-->
-<!--        <input type="search" placeholder="Search.." name="search">-->
-<!--        <button type="submit"><i class="fa fa-search"></i></button>-->
-<!--    </form>-->
-<!--    </form>-->
-<!--</nav>-->
 
 
-<div class="login" style="height: 420px;">
+
+<div class="login" style="height: 600px;">
     <p class="sign" align="center">Verander uw wachtwoord</p>
     <form class="form1" method="post">
         <?php include('errors.php')?>
-        <input class="un " name="current_pass" type="password" align="center" placeholder="Huidig wachtwoord">
-        <input class="un " name="new_password_1" type="password" align="center" placeholder="Nieuw wachtwoord">
-        <input class="pass" type="password" name="new_password_2" align="center" placeholder="Bevestig nieuw wachtwoord">
-        <button class="submit" align="center" name="change_pass">Klaar</button>
+        <input class="pass" name="current_pass" type="password" align="center" placeholder="Huidig wachtwoord">
+        <input class="pass" name="new_password_1" type="password" align="center" placeholder="Nieuw wachtwoord">
+        <input class="pass" name="new_password_2" type="password" align="center" placeholder="Bevestig nieuw wachtwoord">
+        <button class="submit" type="submit" align="center" name="change_pass">Bevestig</button>
+    </form>
 </div>
+
 
 
 
