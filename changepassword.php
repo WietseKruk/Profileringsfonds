@@ -84,6 +84,7 @@
         <input class="un " name="new_password_1" type="password" align="center" placeholder="Nieuw wachtwoord">
         <input class="pass" type="password" name="new_password_2" align="center" placeholder="Bevestig nieuw wachtwoord">
         <button class="submit" align="center" name="change_pass">Klaar</button>
+    </form>
 </div>
 
 

@@ -54,7 +54,7 @@ if(isset($_POST['register'])){
         $query = "INSERT INTO users (email, password) VALUES('$email_1', '$password_hashed')";
         mysqli_query($conn, $query);
 
-        require 'C:\wamp64\www\profileringsfonds1\composer\vendor\autoload.php';
+        require 'C:\wamp64\www\periode3\Selecta\Profileringsfonds\composer\vendor\autoload.php';
 
         $mail = new PHPMailer(TRUE);
 
@@ -280,7 +280,7 @@ if(isset($_POST['submit_form'])) {
 
         $pdf->AddPage();
 
-        $pdf->SetFont("Arial", "B", 10);
+        $pdf->SetFont("Arial", "B", 5);
 
         $pdf->Cell(140, 10, "$f_name's Persoonsgegevens", 1, 1, 'C');
 
@@ -319,7 +319,7 @@ if(isset($_POST['submit_form'])) {
 
         $pdf->AddPage();
 
-        $pdf->SetFont("Arial", "B", 16);
+        $pdf->SetFont("Arial", "B", 5);
 
         $pdf->Cell(140, 10, "$f_name's Antwoorden", 1, 1, 'C');
 
@@ -401,8 +401,8 @@ if(isset($_POST['submit_form'])) {
 
         $id = $_SESSION['id'];
         $user = $_SESSION['user'];
-        $fullpath = "C:\wamp64\www\periode3\Selecta\Profileringsfonds\public_html" . $id . ".pdf";
-        $dbpath = "C:\wamp64\www\periode3\Selecta\Profileringsfonds\public_html" . $id . ".pdf";
+        $fullpath = "C:/wamp64/www/periode3/Selecta/Profileringsfonds/public_html/" . $id . ".pdf";
+        $dbpath = "/periode3/Selecta/Profileringsfonds/public_html/" . $id . ".pdf";
 
         if (!empty($id)) {
             $pdf->Output("$fullpath", "F");
@@ -421,22 +421,22 @@ if(isset($_POST['submit_form'])) {
         if (in_array($file_ext, $allowed_file_types) && ($filesize < 200000)) {
             // Rename file
             $newfilename = $bestandid + $id . $file_ext;
-            if (file_exists("public_html/" . $newfilename)) {
+            //if (file_exists("public_html/" . $newfilename)) {
                 // file already exists error
-                echo "You have already uploaded this file.";
-            } else {
+                //echo "You have already uploaded this file.";
+            //} else {
                 move_uploaded_file($_FILES["file"]["tmp_name"], "public_html/" . $newfilename);
                 echo "File uploaded successfully.";
 
 
-                $dbpath = "/Profileringsfonds/public_html/" . $newfilename;
+                $dbpath = "/periode3/Selecta/Profileringsfonds/public_html/" . $newfilename;
                 $queryUP = "UPDATE formulier SET pathbijlage = '$dbpath' WHERE uID = $id";
                 mysqli_query($conn, $queryUP);
                 mysqli_close($conn);
                 header('location:index.php');
 
-            }
-        } elseif (empty($file_basename)) {
+           // }
+        } if (empty($file_basename)) {
             // file selection error
             echo "Please select a file to upload.";
         } elseif ($filesize > 200000) {
@@ -488,9 +488,10 @@ if(isset($_POST['submit_form'])) {
                     $_SESSION['type'] = $row['type'];
                     $_SESSION['user'] = $row['email'];
                 }
-                header('location:index.php');
+
             }
         }
+        header('location:index.php');
 
     }
 

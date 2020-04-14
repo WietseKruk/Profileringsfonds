@@ -3,7 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="7165d565-14a9-406f-bea4-e0d82e9f5c07" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/changepassword.php" beforeDir="false" afterPath="$PROJECT_DIR$/changepassword.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/formulier.php" beforeDir="false" afterPath="$PROJECT_DIR$/formulier.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/login.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public_html/1.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/public_html/1.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server.php" beforeDir="false" afterPath="$PROJECT_DIR$/server.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -167,7 +171,7 @@
       <workItem from="1586765142213" duration="7701000" />
       <workItem from="1586774935277" duration="1097000" />
       <workItem from="1586867387352" duration="1271000" />
-      <workItem from="1586882730290" duration="4795000" />
+      <workItem from="1586882730290" duration="8823000" />
     </task>
     <servers />
   </component>
@@ -191,10 +195,10 @@
       <screen x="-1920" y="0" width="1920" height="1040" />
     </state>
     <state x="-1230" y="267" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.824/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1585657000514" />
-    <state x="-1235" y="194" key="FileChooserDialogImpl" timestamp="1586882954166">
+    <state x="-1235" y="194" key="FileChooserDialogImpl" timestamp="1586888331403">
       <screen x="-1920" y="0" width="1920" height="1040" />
     </state>
-    <state x="-1235" y="194" key="FileChooserDialogImpl/0.0.1536.824/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1586882954166" />
+    <state x="-1235" y="194" key="FileChooserDialogImpl/0.0.1536.824/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1586888331403" />
     <state x="548" y="154" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1585482689110" />
     <state x="-1165" y="424" key="NewPhpFileDialog" timestamp="1585913494589">
       <screen x="-1920" y="0" width="1920" height="1040" />
@@ -211,10 +215,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="667" y="302" width="322" height="233" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1/0.0.1536.824/-1920.0.1920.1040@0.0.1536.824" timestamp="1584968503878" />
-    <state x="-1131" y="98" width="464" height="557" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog" timestamp="1586868289843">
+    <state x="-1131" y="98" width="464" height="557" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog" timestamp="1586890805201">
       <screen x="-1920" y="0" width="1920" height="1040" />
     </state>
-    <state x="-1131" y="98" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog/0.0.1536.824/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1586868289843" />
+    <state x="-1131" y="98" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog/0.0.1536.824/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1586890805201" />
     <state x="608" y="117" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog/0.0.1536.824/-1920.0.1920.1040@0.0.1536.824" timestamp="1584968645701" />
     <state x="631" y="78" width="464" height="557" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog/0.0.1536.824@0.0.1536.824" timestamp="1585300596734" />
     <state x="760" y="153" width="568" height="703" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog/0.0.1920.1080/-1920.0.1920.1080@0.0.1920.1080" timestamp="1584715576946" />
