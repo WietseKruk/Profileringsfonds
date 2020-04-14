@@ -54,10 +54,10 @@ if(isset($_GET['logout'])){session_destroy(); unset($_SESSION['user']); unset($_
                 <img src="images/globe.png" width="35px">
             </li>
             <li class="nav-item">
-                <a  href="index.php?lang=nl" data-lang="nl">NL</a>
+                <a  href="login.php?lang=nl" data-lang="nl">NL</a>
             </li>/
             <li class="nav-item" >
-                <a  href="index.php?lang=en" data-lang="en">ENG</a>
+                <a  href="login.php?lang=en" data-lang="en">ENG</a>
             </li>
 
 

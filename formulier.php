@@ -89,7 +89,7 @@ if(isset($_GET['logout'])){session_destroy(); unset($_SESSION['user']); unset($_
 <div class="container">
 <form class="form-horizontal" method="post" enctype="multipart/form-data" >
 <?php include ('errors.php')?>
-    <h2>Persoonlijke gegevens</h2>
+    <h2><?php echo $lang['Persoonlijke gegevens'] ?></h2>
     <br>
         <div class="row">
 
@@ -276,7 +276,7 @@ if(isset($_GET['logout'])){session_destroy(); unset($_SESSION['user']); unset($_
             </div>
         </div>
         <br>
-        <h2>Gegevens opleiding</h2>
+        <h2><?php echo $lang['Gegevens opleiding'] ?></h2>
         <br>
         <div class="row">
             <div class="col-sm-6">
@@ -289,7 +289,7 @@ if(isset($_GET['logout'])){session_destroy(); unset($_SESSION['user']); unset($_
                                 <input type="radio" id="ja" name="ingeschreven" value="ja" checked="checked">
                                 <label>Ja</label><br>
                                 <input type="radio" id="nee" name="ingeschreven" value="nee">
-                                <label>Nee</label><br>
+                                <label><?php echo $lang['nee'] ?></label><br>
                         </div>
                         <div class="col-sm-2">
                             <div id="hover-div">
@@ -405,7 +405,7 @@ if(isset($_GET['logout'])){session_destroy(); unset($_SESSION['user']); unset($_
                                 <input type="radio" id="ja" name="onderbroken" value="ja" checked="checked">
                                 <label>Ja</label><br>
                                 <input type="radio" id="nee" name="onderbroken" value="nee">
-                                <label>Nee</label><br>
+                                <label><?php echo $lang['nee'] ?></label><br>
                         </div>
                     </div>
                 </div>
@@ -428,7 +428,7 @@ if(isset($_GET['logout'])){session_destroy(); unset($_SESSION['user']); unset($_
                                 <input type="radio" id="ja" name="uitgeschreven" value="ja" checked="checked">
                                 <label for="ja">Ja</label><br>
                                 <input type="radio" id="nee" name="uitgeschreven" value="nee">
-                                <label for="nee">Nee</label><br>
+                                <label for="nee"><?php echo $lang['nee'] ?></label><br>
                         </div>
                     </div>
                 </div>
@@ -469,7 +469,7 @@ if(isset($_GET['logout'])){session_destroy(); unset($_SESSION['user']); unset($_
             </div>
         </div>
         <br>
-        <h2>Bijzondere omstandigheid</h2>
+        <h2><?php echo $lang['bijzonder'] ?></h2>
         <br>
         <div class="row">
             <div class="col-sm-12">
