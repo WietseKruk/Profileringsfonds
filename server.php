@@ -1,6 +1,8 @@
 <?php
 session_start();
 
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
 //variable init
 $errors = array();
 $email_1 ="";
@@ -9,7 +11,7 @@ $email_2 ="";
 //db variables
 $host = 'localhost';
 $name = 'root';
-$pass = 'root';
+$pass = '';
 $database = 'profileringsfonds';
 
     //verbinding met database + errormsg
@@ -51,8 +53,54 @@ if(isset($_POST['register'])){
         $query = "INSERT INTO users (email, password) VALUES('$email_1', '$password_hashed')";
         mysqli_query($conn, $query);
 
+        require 'C:\wamp64\www\profileringsfonds1\composer\vendor\autoload.php';
+
+        $mail = new PHPMailer(TRUE);
+
+        try {
+            $mail->setFrom('profileringsfondsnhlstenden@gmail.com');
+            $mail->addAddress($email_1, $email_1);
+            $mail->Subject = 'profileringsfonds';
+            $mail->Body = 'Hierbij je inloggegevens voor het aanvragen van het profileringsfonds:' . '<br>'. 'inlognaam: ' . $email_1 . "<br>" . 'wachtwoord: ' . $password;
+
+            /* SMTP parameters. */
+
+            /* Tells PHPMailer to use SMTP. */
+            $mail->isSMTP();
+
+            /* SMTP server address. */
+            $mail->Host = 'smtp.gmail.com';
+
+            /* Use SMTP authentication. */
+            $mail->SMTPAuth = TRUE;
+
+            /* Set the encryption system. */
+            $mail->SMTPSecure = 'ssl';
+
+            /* SMTP authentication username. */
+            $mail->Username = 'profileringsfondsnhlstenden@gmail.com';
+
+            /* SMTP authentication password. */
+            $mail->Password = 'TestPswdNhlstenden!';
+
+            /* Set the SMTP port. */
+            $mail->Port = 465;
+
+            /* Finally send the mail. */
+            $mail->send();
+        }
+        catch (Exception $e)
+        {
+            echo $e->errorMessage();
+        }
+        catch (\Exception $e)
+        {
+            echo $e->getMessage();
+        }
+
         //Session ID zetten
         $_SESSION['reg'] = $email_1 . " succesvol toegevoegd met wachtwoord " . $password;
+
         $email_1 = "";
         $email_2 = "";
     }
@@ -352,7 +400,7 @@ if(isset($_POST['submit_form'])) {
 
         $id = $_SESSION['id'];
         $user = $_SESSION['user'];
-        $fullpath = "C:\wamp64\www\profileringsfonds\public_html/public_html" . $id . ".pdf";
+        $fullpath = "C:\wamp64\www\profileringsfonds1\public_html/public_html" . $id . ".pdf";
         $dbpath = "Profileringsfonds/public_html/" . $id . ".pdf";
 
         if (!empty($id)) {

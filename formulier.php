@@ -81,436 +81,707 @@ if(isset($_GET['logout'])){session_destroy(); unset($_SESSION['user']); unset($_
 
 
 <div class="header">
-    <h2>Persoonlijke gegevens</h2>
+    <h1>Aanvraag</h1>
 </div>
-
-<form method="post" enctype="multipart/form-data" >
+<div class="container">
+<form class="form-horizontal" method="post" enctype="multipart/form-data" >
 <?php include ('errors.php')?>
-    <div align ="center" class="formvragen">
-       <p><b><?php echo $lang['studentennr'] ?></b>
-        <input type="text" name="studentnummer">
-           <input type="hidden" name="1" value="1"></p>
-        <div id="hover-div">
-            <i class="fas fa-info-circle"></i>
-            <span id="hover-element">
-           Uw studentennummer zoals vermeld op studentenkaart.
-        </span>
-        </div>
-    </div>
-    <div align ="center" class="formvragen">
-        <p><b><?php echo $lang['achternaam'] ?></b>
+    <h2>Persoonlijke gegevens</h2>
+    <br>
+        <div class="row">
 
-            <input type="text" name="achternaam"></p>
-        <div id="hover-div">
-            <i class="fas fa-info-circle"></i>
-            <span id="hover-element">
-           Zoals vermeld op paspoort.
-        </span>
+            <div class="test col-sm-6">
+                <div class="formvragen">
+                    <div class="row">
+                        <div class="col-sm-4">
+                           <p><b><?php echo $lang['studentennr'] ?></b>
+                            <input type="text" name="studentnummer">
+                               <input type="hidden" name="1" value="1"></p>
+                        </div>
+                        <div class="col-sm-4">
+                            <div id="hover-div">
+                                <i class="fas fa-info-circle"></i>
+                                <span id="hover-element">
+                               Uw studentennummer zoals vermeld op studentenkaart.
+                            </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="formvragen">
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <p><b><?php echo $lang['achternaam'] ?></b>
+                            <input type="text" name="achternaam"></p>
+                        </div>
+                        <div class="col-sm-4">
+                            <div id="hover-div">
+                                <i class="fas fa-info-circle"></i>
+                                <span id="hover-element">
+                               Zoals vermeld op paspoort.
+                            </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="formvragen">
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <p><b><?php echo $lang['voornaam'] ?></b>
+                                <input type="text" name="roepnaam"></p>
+                        </div>
+                        <div class="col-sm-4">
+                            <div id="hover-div">
+                                <i class="fas fa-info-circle"></i>
+                                <span id="hover-element">
+                               Zoals vermeld op paspoort.
+                            </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="formvragen">
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <p><b><?php echo $lang['geboorte'] ?></b>
+                                <input type="text" name="geboortedatum"></p>
+                        </div>
+                        <div class="col-sm-4">
+                            <div id="hover-div">
+                                <i class="fas fa-info-circle"></i>
+                                <span id="hover-element">
+                               Zoals vermeld op paspoort.
+                            </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="formvragen">
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <p><b>Adresgegevens</b>
+                                <input type="text" name="adres"></p>
+                        </div>
+                        <div class="col-sm-4">
+                            <div id="hover-div">
+                                <i class="fas fa-info-circle"></i>
+                                <span id="hover-element">
+                               Woonplaats.
+                            </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="formvragen">
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <p><b>Postcode</b>
+                                <input type="text" name="postcode"></p>
+                        </div>
+                        <div class="col-sm-4">
+                            <div id="hover-div">
+                                <i class="fas fa-info-circle"></i>
+                                <span id="hover-element">
+                               Postcode.
+                            </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="test col-sm-6">
+                <div class="formvragen">
+                    <div class="row">
+                        <div class="col-sm-4">
+                           <p><b>Woonplaats</b>
+                               <input type="text" name="woonplaats"></p>
+                        </div>
+                        <div class="col-sm-4">
+                            <div id="hover-div">
+                                <i class="fas fa-info-circle"></i>
+                                <span id="hover-element">
+                               Uw woonplaats.
+                            </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="formvragen">
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <p><b>Telefoonnummer</b>
+                                <input type="text" name="tnummer"></p>
+                        </div>
+                        <div class="col-sm-4">
+                            <div id="hover-div">
+                                <i class="fas fa-info-circle"></i>
+                                <span id="hover-element">
+                               Telefoonnummer.
+                            </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="formvragen">
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <p><b>E-mailadres</b>
+                            <input type="text" name="email"></p>
+                        </div>
+                        <div class="col-sm-4">
+                            <div id="hover-div">
+                                <i class="fas fa-info-circle"></i>
+                                <span id="hover-element">
+                               Uw E-mailadres.
+                            </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="formvragen">
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <p><b>BSN-nummer</b>
+                                <input type="text" name="bsn"></p>
+                        </div>
+                        <div class="col-sm-4">
+                            <div id="hover-div">
+                                <i class="fas fa-info-circle"></i>
+                                <span id="hover-element">
+                               Uw BSN nummer
+                            </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="formvragen">
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <p><b>IBAN rekeningnummer</b>
+                                <input type="text" name="iban"></p>
+                        </div>
+                        <div class="col-sm-4">
+                            <div id="hover-div">
+                                <i class="fas fa-info-circle"></i>
+                                <span id="hover-element">
+                               Uw rekeningnummer.
+                            </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-    </div>
-    <div align ="center" class="formvragen">
-        <p><b><?php echo $lang['voornaam'] ?></b>
-            <input type="text" name="roepnaam"></p>
-        <div id="hover-div">
-            <i class="fas fa-info-circle"></i>
-            <span id="hover-element">
-           Zoals vermeld op paspoort.
-        </span>
+        <br>
+        <h2>Gegevens opleiding</h2>
+        <br>
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="formvragen">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <p><b>Sta jij op het moment van aanvragen ingeschreven bij NHL Stenden Hogeschool?</b></p>
+                        </div>
+                        <div class="col-sm-10">
+                                <input type="radio" id="ja" name="ingeschreven" value="ja">
+                                <label>Ja</label><br>
+                                <input type="radio" id="nee" name="ingeschreven" value="nee">
+                                <label>Nee</label><br>
+                        </div>
+                        <div class="col-sm-2">
+                            <div id="hover-div">
+                                <i class="fas fa-info-circle"></i>
+                                <span id="hover-element">
+                                       ...
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="formvragen">
+                    <div class="row">
+                        <div class="col-sm-10">
+                            <p><b>Voor welke opleiding sta jij op dit moment ingeschreven?</b></p>
+                            <input type="text" name="opleiding"></p>
+                        </div>
+                        <div class="col-sm-2">
+                            <div id="hover-div">
+                                <i class="fas fa-info-circle"></i>
+                                <span id="hover-element">
+                               ...
+                            </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="formvragen">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <p><b>Welke opleidingsvariant volg jij?</b>
+                            </p>
+                        </div>
+                        <div class="col-sm-10">
+                                <input type="radio" id="voltijd" name="variant" value="voltijd">
+                                <label>Voltijd</label><br>
+                                <input type="radio" id="deeltijd" name="variant" value="deeltijd">
+                                <label>Deeltijd</label><br>
+                                <input type="radio" id="duaal" name="variant" value="duaal">
+                                <label>Duaal</label><br>
+                        </div>
+                        <div class="col-sm-2">
+                            <div id="hover-div">
+                                <i class="fas fa-info-circle"></i>
+                                <span id="hover-element">
+                               ...
+                            </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="formvragen">
+                    <div class="row">
+                        <div class="col-sm-10">
+                            <p><b>Per wanneer ben je met je studie gestart?</b></p>
+                            <input type="text" name="gestart"></p>
+                        </div>
+                        <div class="col-sm-2">
+                            <div id="hover-div">
+                                <i class="fas fa-info-circle"></i>
+                                <span id="hover-element">
+                               ...
+                            </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="formvragen">
+                    <div class="row">
+                        <div class="col-sm-10">
+                            <p><b>In welk studiejaar zit je?</b>
+                            </p>
+                        </div>
+                        <div class="col-sm-2">
+                            <div id="hover-div">
+                                <i class="fas fa-info-circle"></i>
+                                <span id="hover-element">
+                               ....
+                            </span>
+                            </div>
+                        </div>
+                        <div class="col-sm-12">
+                                <input type="radio" id="1e jaars" name="jaar" value="1e jaars">
+                                <label>1e jaars</label><br>
+                                <input type="radio" id="2e jaars" name="jaar" value="2e jaars">
+                                <label>2e jaars</label><br>
+                                <input type="radio" id="3e jaars" name="jaar" value="3e jaars">
+                                <label>3e jaars</label><br>
+                                <input type="radio" id="4e jaars" name="jaar" value="4e jaars">
+                                <label>4e jaars</label><br>
+                                <input type="radio" id="oudere jaars" name="jaar" value="ouder jaars">
+                                <label>Ouder jaars</label><br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="formvragen">
+                    <div class="row">
+                        <div class="col-sm-10">
+                            <p><b>Heb je de studie tussendoor onderbroken</b>
+                            </p>
+                        </div>
+                        <div class="col-sm-2">
+                            <div id="hover-div">
+                                <i class="fas fa-info-circle"></i>
+                                <span id="hover-element">
+                               ...
+                            </span>
+                            </div>
+                        </div>
+                        <div class="col-sm-12">
+                                <input type="radio" id="ja" name="onderbroken" value="ja">
+                                <label>Ja</label><br>
+                                <input type="radio" id="nee" name="onderbroken" value="nee">
+                                <label>Nee</label><br>
+                        </div>
+                    </div>
+                </div>
+                <div class="formvragen">
+                    <div class="row">
+                        <div class="col-sm-10">
+                            <p><b>Heb jij je gedurende de studieonderbreking
+                                    ook uitgeschreven bij NHL Stenden?</b>
+                            </p>
+                        </div>
+                        <div class="col-sm-2">
+                            <div id="hover-div">
+                                <i class="fas fa-info-circle"></i>
+                                <span id="hover-element">
+                               ...
+                            </span>
+                            </div>
+                        </div>
+                        <div class="col-sm-12">
+                                <input type="radio" id="ja" name="uitgeschreven" value="ja">
+                                <label for="ja">Ja</label><br>
+                                <input type="radio" id="nee" name="uitgeschreven" value="nee">
+                                <label for="nee">Nee</label><br>
+                        </div>
+                    </div>
+                </div>
+                <div class="formvragen">
+                    <div class="row">
+                        <div class="col-sm-10">
+                            <p><b>Heb je ook voor andere studie(s)
+                                    ingeschreven gestaan bij NHL Stenden? En zo ja, welke.</b>
+                                <input type="text" name="andere"></p>
+                        </div>
+                        <div class="col-sm-2">
+                            <div id="hover-div">
+                                <i class="fas fa-info-circle"></i>
+                                <span id="hover-element">
+                               ...
+                            </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="formvragen">
+                    <div class="row">
+                        <div class="col-sm-10">
+                            <p><b>Heb je eerder een inschrijving bij een
+                                    andere instelling (HBO/Universiteit) gehad? Zo ja, bij welke instelling, en welke periode</b>
+                                <input type="text" name="instelling"></p>
+                        </div>
+                        <div class="col-sm-2">
+                            <div id="hover-div">
+                                <i class="fas fa-info-circle"></i>
+                                <span id="hover-element">
+                               ...
+                            </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-    </div>
-    <div align ="center" class="formvragen">
-        <p><b><?php echo $lang['geboorte'] ?></b>
-            <input type="text" name="geboortedatum"></p>
-        <div id="hover-div">
-            <i class="fas fa-info-circle"></i>
-            <span id="hover-element">
-           Zoals vermeld op paspoort.
-        </span>
+        <br>
+        <h2>Bijzondere omstandigheid</h2>
+        <br>
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="formvragen">
+                    <div class="row">
+                        <div class="col-sm-10">
+                            <p><b>Bijzondere omstandigheden die aanleiding is tot deze aanvraag (kruis aan welke van
+                                    toepassing is):</b>
+                            </p>
+                        </div>
+                        <div class="col-sm-2">
+                            <div id="hover-div">
+                                <i class="fas fa-info-circle"></i>
+                                <span id="hover-element">
+                               ...
+                            </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <input type="radio" id="optie1" name="aanleiding" value="optie1">
+                            <label>Ziekte of zwangerschap en bevalling;</label><br><br>
+                            <input type="radio" id="2e" name="aanleiding" value="optie2">
+                            <label>Een functiestoornis, handicap of chronische ziekte;</label><br><br>
+                            <input type="radio" id="3e" name="aanleiding" value="optie3">
+                            <label>bijzondere familieomstandigheden;</label><br><br>
+                            <input type="radio" id="4e" name="aanleiding" value="optie4">
+                            <label>Een onvoldoende studeerbare opleiding;</label><br><br>
+
+                            <input type="radio" id="ouder Jaars" name="aanleiding" value="optie5">
+                            <label>De door de hogeschool toegekende status van topsporter;</label><br><br>
+                        </div>
+                        <div class="col-sm-4">
+                            <input type="radio" id="ouder Jaars" name="aanleiding" value="optie6">
+                            <label>Andere dan de in de hierboven genoemde onderdelen bedoelde omstandigheden die, indien
+                                een daarop gebaseerd verzoek om financiële ondersteuning door het College van Bestuur niet
+                                zou worden gehonoreerd, zouden leiden tot een onbillijkheid van overwegende aard.</label><br><br>
+
+                        </div>
+                        <div class="col-sm-4">
+                            <input type="radio" id="ouder Jaars" name="aanleiding" value="optie7">
+                            <label for="optie7">Activiteiten op bestuurlijk of maatschappelijk gebied die naar het oordeel van het College van
+                                Bestuur mede in het belang zijn van de hogeschool of van het onderwijs dat de student volgt;</label><br><br>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-    </div>
-    <div align ="center" class="formvragen">
-        <p><b>Adresgegevens</b>
-            <input type="text" name="adres"></p>
-        <div id="hover-div">
-            <i class="fas fa-info-circle"></i>
-            <span id="hover-element">
-           Woonplaats.
-        </span>
-        </div>
-    </div>
-    <div align ="center" class="formvragen">
-        <p><b>Postcode</b>
-            <input type="text" name="postcode"></p>
-        <div id="hover-div">
-            <i class="fas fa-info-circle"></i>
-            <span id="hover-element">
-           Postcode.
-        </span>
-        </div>
-    </div>
-    <div align ="center" class="formvragen">
-       <p><b>Woonplaats</b>
-           <input type="text" name="woonplaats"></p>
-        <div id="hover-div">
-            <i class="fas fa-info-circle"></i>
-            <span id="hover-element">
-           Uw woonplaats.
-        </span>
-        </div>
-    </div>
-    <div align ="center" class="formvragen">
-        <p><b>Telefoonnummer</b>
-            <input type="text" name="tnummer"></p>
-        <div id="hover-div">
-            <i class="fas fa-info-circle"></i>
-            <span id="hover-element">
-           Telefoonnummer.
-        </span>
-        </div>
-    </div>
-    <div align ="center" class="formvragen">
-        <p><b>E-mailadres</b>
-        <input type="text" name="email"></p>
-        <div id="hover-div">
-            <i class="fas fa-info-circle"></i>
-            <span id="hover-element">
-           Uw E-mailadres.
-        </span>
-        </div>
-    </div>
-    <div align ="center" class="formvragen">
-        <p><b>BSN-nummer</b>
-            <input type="text" name="bsn"></p>
-        <div id="hover-div">
-            <i class="fas fa-info-circle"></i>
-            <span id="hover-element">
-           Uw BSN nummer
-        </span>
-        </div>
-    </div>
-    <div align ="center" class="formvragen">
-        <p><b>IBAN rekeningnummer</b>
-            <input type="text" name="iban"></p>
-        <div id="hover-div">
-            <i class="fas fa-info-circle"></i>
-            <span id="hover-element">
-           Uw rekeningnummer.
-        </span>
-        </div>
-    </div>
-    <div align ="center" class="formvragen">
-        <p><b>Sta jij op het moment van aanvragen ingeschreven bij NHL Stenden Hogeschool?</b>
-        <div id="hover-div">
-            <i class="fas fa-info-circle"></i>
-            <span id="hover-element">
-           ...
-        </span>
-        </div>
-            <input type="radio" id="ja" name="ingeschreven" value="ja">
-            <label>Ja</label><br>
-            <input type="radio" id="nee" name="ingeschreven" value="nee">
-            <label>Nee</label><br>
-    </div>
-    <div align ="center" class="formvragen">
-        <p><b>Voor welke opleiding sta jij op dit moment ingeschreven?</b></p>
-        <input type="text" name="opleiding"></p>
-        <div id="hover-div">
-            <i class="fas fa-info-circle"></i>
-            <span id="hover-element">
-           ...
-        </span>
-        </div>
-    </div>
-    <div align ="center" class="formvragen">
-        <p><b>Welke opleidingsvariant volg jij?</b>
-        <div id="hover-div">
-            <i class="fas fa-info-circle"></i>
-            <span id="hover-element">
-           ...
-        </span>
-        </div>
-            <input type="radio" id="voltijd" name="variant" value="voltijd">
-            <input type="radio" id="voltijd" name="variant" value="voltijd" checked="checked">
-            <label>Voltijd</label><br>
-            <input type="radio" id="deeltijd" name="variant" value="deeltijd">
-            <label>Deeltijd</label><br>
-            <input type="radio" id="duaal" name="variant" value="duaal">
-            <label>Duaal</label><br>
-    </div>
-    <div align ="center" class="formvragen">
-        <p><b>Per wanneer ben je met je studie gestart?</b></p>
-        <input type="text" name="gestart"></p>
-        <div id="hover-div">
-            <i class="fas fa-info-circle"></i>
-            <span id="hover-element">
-           ...
-        </span>
-        </div>
-    </div>
-    <div align ="center" class="formvragen">
-        <p><b>In welk studiejaar zit je?</b>
-        <div id="hover-div">
-            <i class="fas fa-info-circle"></i>
-            <span id="hover-element">
-           ....
-        </span>
-        </div>
-            <input type="radio" id="1e jaars" name="jaar" value="1e jaars">
-            <input type="radio" id="1e jaars" name="jaar" value="1e jaars" checked="checked">
-            <label>1e jaars</label><br>
-            <input type="radio" id="2e jaars" name="jaar" value="2e jaars">
-            <label>2e jaars</label><br>
-            <input type="radio" id="3e jaars" name="jaar" value="3e jaars">
-            <label>3e jaars</label><br>
-            <input type="radio" id="4e jaars" name="jaar" value="4e jaars">
-            <label>4e jaars</label><br>
-            <input type="radio" id="oudere jaars" name="jaar" value="ouder jaars">
-            <label>Ouder jaars</label><br>
-    </div>
-    <div align ="center" class="formvragen">
-        <p><b>Heb je de studie tussendoor onderbroken</b>
-        <div id="hover-div">
-            <i class="fas fa-info-circle"></i>
-            <span id="hover-element">
-           ...
-        </span>
-        </div>
-            <input type="radio" id="ja" name="onderbroken" value="ja">
-            <input type="radio" id="ja" name="onderbroken" value="ja" checked="checked">
-            <label>Ja</label><br>
-            <input type="radio" id="nee" name="onderbroken" value="nee">
-            <label>Nee</label><br>
-    </div>
-    <div align ="center" class="formvragen">
-        <p><b>Heb jij je gedurende de studieonderbreking
-                ook uitgeschreven bij NHL Stenden?</b>
-        <div id="hover-div">
-            <i class="fas fa-info-circle"></i>
-            <span id="hover-element">
-           ...
-        </span>
-        </div>
-            <input type="radio" id="ja" name="uitgeschreven" value="ja">
-            <input type="radio" id="ja" name="uitgeschreven" value="ja" checked="checked">
-            <label for="ja">Ja</label><br>
-            <input type="radio" id="nee" name="uitgeschreven" value="nee">
-            <label for="nee">Nee</label><br>
-    </div>
-    <div align ="center" class="formvragen">
-        <p><b>Heb je ook voor andere studie(s)
-                ingeschreven gestaan bij NHL Stenden? En zo ja, welke.</b>
-            <input type="text" name="andere"></p>
-        <div id="hover-div">
-            <i class="fas fa-info-circle"></i>
-            <span id="hover-element">
-           ...
-        </span>
-        </div>
-    </div>
-    <div align ="center" class="formvragenp">
-        <p><b>Heb je eerder een inschrijving bij een
-                andere instelling (HBO/Universiteit) gehad? Zo ja, bij welke instelling, en welke periode</b>
-            <input type="text" name="instelling"></p>
-        <div id="hover-div">
-            <i class="fas fa-info-circle"></i>
-            <span id="hover-element">
-           ...
-        </span>
-        </div>
-    </div>
-    <div align ="center" class="formvragen">
-        <p><b>Bijzondere omstandigheden die aanleiding is tot deze aanvraag (kruis aan welke van
-                toepassing is):</b>
-        <div id="hover-div">
-            <i class="fas fa-info-circle"></i>
-            <span id="hover-element">
-           ...
-        </span>
-        </div>
-            <input type="radio" id="optie1" name="aanleiding" value="optie1">
-            <input type="radio" id="optie1" name="aanleiding" value="optie1" checked="checked">
-            <label>ziekte of zwangerschap en bevalling;</label><br>
-            <input type="radio" id="2e" name="aanleiding" value="optie2">
-            <label>een functiestoornis, handicap of chronische ziekte;</label><br>
-            <input type="radio" id="3e" name="aanleiding" value="optie3">
-            <label>bijzondere familieomstandigheden;</label><br>
-            <input type="radio" id="4e" name="aanleiding" value="optie4">
-            <label>een onvoldoende studeerbare opleiding;</label><br>
-            <input type="radio" id="ouder Jaars" name="aanleiding" value="optie5">
-            <label>de door de hogeschool toegekende status van topsporter;</label><br>
-            <input type="radio" id="ouder Jaars" name="aanleiding" value="optie6">
-            <label>andere dan de in de hierboven genoemde onderdelen bedoelde omstandigheden die, indien
-                een daarop gebaseerd verzoek om financiële ondersteuning door het College van Bestuur niet
-                zou worden gehonoreerd, zouden leiden tot een onbillijkheid van overwegende aard.</label><br>
-            <input type="radio" id="ouder Jaars" name="aanleiding" value="optie7">
-            <label for="optie7">activiteiten op bestuurlijk of maatschappelijk gebied die naar het oordeel van het College van
-                Bestuur mede in het belang zijn van de hogeschool of van het onderwijs dat de student volgt;</label><br>
-    </div>
-    <div align ="center" class="formvragen">
-        <p><b>Hoeveel maanden studievertraging heb je opgelopen
-                als gevolg van de hierboven aangegeven bijzondere
-                omstandigheid c.q. omstandigheden?</b>
-            <input type="text" name="maanden"></p>
-        <div id="hover-div">
-            <i class="fas fa-info-circle"></i>
-            <span id="hover-element">
-           ...
-        </span>
-        </div>
-    </div>
-    <div align ="center" class="formvragen">
-        <p><b>Onder welk stelsel van DUO val jij?</b>
-        <div id="hover-div">
-            <i class="fas fa-info-circle"></i>
-            <span id="hover-element">
-           ...
-        </span>
-        </div>
-            <input type="radio" id="prestatiebeurs" name="duo" value="prestatiebeurs">
-            <input type="radio" id="prestatiebeurs" name="duo" value="prestatiebeurs" checked="checked">
-            <label>Prestatiebeurs</label><br>
-            <input type="radio" id="leenstelsel" name="duo" value="leenstelsel">
-            <label>Leenstelsel</label><br></p>
-    </div>
-    <div align ="center" class="formvragen">
-        <p><b>Heb je recht (gehad) op een extra jaar
-                studiefinanciering/aanvullende beurs via DUO?. Zo ja, voeg het bewijs toe bij de bijlagen</b>
-        <div id="hover-div">
-            <i class="fas fa-info-circle"></i>
-            <span id="hover-element">
-           ...
-        </span>
-        </div>
-            <input type="radio" id="ja" name="extra" value="ja">
-            <input type="radio" id="ja" name="extra" value="ja" checked="checked">
-            <label>Ja</label><br>
-            <input type="radio" id="nee" name="extra" value="nee">
-            <label>Nee</label><br></p>
-    </div>
-    <div align ="center" class="formvragen">
-        <p><b>Indien je een extra jaar studiefinanciering hebt
-                aangevraagd, per wanneer is deze ingegaan? Vermeld
-                datum.</b>
-            <input type="text" name="ingegaan"></p>
-        <div id="hover-div">
-            <i class="fas fa-info-circle"></i>
-            <span id="hover-element">
-           ...
-        </span>
-        </div>
-    </div>
-    <div align ="center" class="formvragen">
-        <p><b>Hoeveel maanden financiële ondersteuning vraag je
-                aan? (Maximaal 12)</b>
-            <input type="text" name="financieel"></p>
-        <div id="hover-div">
-            <i class="fas fa-info-circle"></i>
-            <span id="hover-element">
-           ...
-        </span>
-        </div>
-    </div>
-    <div align ="center" class="formvragen">
-        <p><b>Heb je eerder financiële ondersteuning uit het
-                Profileringsfonds ontvangen? En zoja, hoeveel maanden in welk jaar</b>
-            <input type="text" name="eerder"></p>
-        <div id="hover-div">
-            <i class="fas fa-info-circle"></i>
-            <span id="hover-element">
-           ...
-        </span>
-        </div>
-    </div>
-    <div align ="center" class="formvragen">
-        <p><b>Waaruit bestond de door jou aangevoerde bijzondere omstandigheid?</b>
-            <input type="text" name="waaruit"></p>
-        <div id="hover-div">
-            <i class="fas fa-info-circle"></i>
-            <span id="hover-element">
-           ...
-        </span>
-        </div>
-    </div>
-    <div align ="center" class="formvragen">
-        <p><b>Wanneer vond deze plaats en wanneer geëindigd?</b>
-            <input type="text" name="eindig"></p>
-        <div id="hover-div">
-            <i class="fas fa-info-circle"></i>
-            <span id="hover-element">
-           ...
-        </span>
-        </div>
-    </div>
-    <div align ="center" class="formvragen">
-        <p><b>Op welke datum en bij wie heb je melding gemaakt van deze bijzondere omstandigheid?</b>
-            <input type="text" name="melding"></p>
-        <div id="hover-div">
-            <i class="fas fa-info-circle"></i>
-            <span id="hover-element">
-           ...
-        </span>
-        </div>
-    </div>
-    <div align ="center" class="formvragen">
-        <p><b>Op welke datum en bij wie heb je de bijzondere omstandigheid eventueel afgemeld?</b>
-            <input type="text" name="afmeld"></p>
-        <div id="hover-div">
-            <i class="fas fa-info-circle"></i>
-            <span id="hover-element">
-           ...
-        </span>
-        </div>
-    </div>
-    <div align ="center" class="formvragen">
-        <p><b>Geef aan welke studieonderdelen in welke onderwijsperiode en in welk opleidingsjaar niet
-                konden worden gevolgd, voor welke studieonderdelen de mogelijkheid van een herkansing
-                bestaat en welke studieonderdelen –wanneer- dienen te worden overgelopen.</b>
-            <input type="text" name="studieond"></p>
-        <div id="hover-div">
-            <i class="fas fa-info-circle"></i>
-            <span id="hover-element">
-           ...
-        </span>
-        </div>
-    </div>
-    <div align ="center" class="formvragen">
-        <p><b>Wat is de totale duur van de vertraging?</b>
-            <input type="text" name="duur"></p>
-        <div id="hover-div">
-            <i class="fas fa-info-circle"></i>
-            <span id="hover-element">
-           ...
-        </span>
-        </div>
-    </div>
-    <div align ="center" class="formvragen">
-        <p><b>Op welke wijze heeft de bijzondere omstandigheid het verloop van je studie beïnvloed?</b>
-            <input type="text" name="verloop"></p>
-        <div id="hover-div">
-            <i class="fas fa-info-circle"></i>
-            <span id="hover-element">
-           ...
-        </span>
-        </div>
-    </div>
-    <div align ="center" class="formvragen">
-        <p><b>Op welke wijze heb je geprobeerd de negatieve gevolgen van de bijzondere omstandigheid voor
-                jouw studie dan wel studiefinanciering 1 zoveel mogelijk te beperken dan wel te voorkomen
-                (raadplegen decaan, tussentijds uitschrijven/stopzetten studiefinanciering)?</b>
-            <input type="text" name="wijze"></p>
-        <div id="hover-div">
-            <i class="fas fa-info-circle"></i>
-            <span id="hover-element">
-           ...
-        </span>
-        </div>
-    </div>
+        <br>
+        <h2>Gegevens opleiding</h2>
+        <br>
+
+            <div class="formvragen">
+                <div class="row">
+                    <div class="col-sm-11">
+                        <p><b>Hoeveel maanden studievertraging heb je opgelopen
+                                als gevolg van de hierboven aangegeven bijzondere
+                                omstandigheid c.q. omstandigheden?</b><br>
+                            <input type="text" name="maanden"></p>
+                    </div>
+                    <div class="col-sm-1">
+                        <div id="hover-div">
+                            <i class="fas fa-info-circle"></i>
+                            <span id="hover-element">
+                           ...
+                        </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="formvragen">
+                        <div class="row">
+                            <div class="col-sm-8">
+                                <p><b>Onder welk stelsel van DUO val jij?</b>
+                                </p>
+                            </div>
+                            <div class="col-sm-2">
+                                <div id="hover-div">
+                                    <i class="fas fa-info-circle"></i>
+                                    <span id="hover-element">
+                                   ...
+                                </span>
+                                </div>
+                            </div>
+                            <div class="col-sm-12">
+                                <input type="radio" id="prestatiebeurs" name="duo" value="prestatiebeurs">
+                                <label>Prestatiebeurs</label><br>
+                                <input type="radio" id="leenstelsel" name="duo" value="leenstelsel">
+                                <label>Leenstelsel</label><br></p>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="formvragen">
+                        <div class="row">
+                            <div class="col-sm-10">
+                                <p><b>Heb je recht (gehad) op een extra jaar
+                                        studiefinanciering/aanvullende beurs via DUO?. Zo ja, voeg het bewijs toe bij de bijlagen</b>
+                                </p>
+                            </div>
+                            <div class="col-sm-2">
+                                <div id="hover-div">
+                                    <i class="fas fa-info-circle"></i>
+                                    <span id="hover-element">
+                                   ...
+                                </span>
+                                </div>
+                            </div>
+                            <div class="col-sm-12">
+                                    <input type="radio" id="ja" name="extra" value="ja">
+                                    <label>Ja</label><br>
+                                    <input type="radio" id="nee" name="extra" value="nee">
+                                    <label>Nee</label><br></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="formvragen">
+                <div class="row">
+                    <div class="col-sm-10">
+                        <p><b>Indien je een extra jaar studiefinanciering hebt
+                                aangevraagd, per wanneer is deze ingegaan? Vermeld
+                                datum.</b>
+                            <input type="text" name="ingegaan"></p>
+                    </div>
+                    <div class="col-sm-2">
+                        <div id="hover-div">
+                            <i class="fas fa-info-circle"></i>
+                            <span id="hover-element">
+                           ...
+                        </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="formvragen">
+                <div class="row">
+                    <div class="col-sm-10">
+                        <p><b>Hoeveel maanden financiële ondersteuning vraag je
+                                aan? (Maximaal 12)</b><br>
+                            <input type="text" name="financieel"></p>
+                    </div>
+                    <div class="col-sm-2">
+                        <div id="hover-div">
+                            <i class="fas fa-info-circle"></i>
+                            <span id="hover-element">
+                           ...
+                        </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="formvragen">
+                <div class="row">
+                    <div class="col-sm-10">
+                    <p><b>Heb je eerder financiële ondersteuning uit het
+                            Profileringsfonds ontvangen? En zoja, hoeveel maanden in welk jaar</b>
+                        <input type="text" name="eerder"></p>
+                    </div>
+                    <div class="col-sm-2">
+                        <div id="hover-div">
+                            <i class="fas fa-info-circle"></i>
+                            <span id="hover-element">
+                           ...
+                        </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="formvragen">
+                <div class="row">
+                    <div class="col-sm-10">
+                        <p><b>Waaruit bestond de door jou aangevoerde bijzondere omstandigheid?</b><br>
+                            <input type="text" name="waaruit"></p>
+                    </div>
+                    <div class="col-sm-2">
+                        <div id="hover-div">
+                            <i class="fas fa-info-circle"></i>
+                            <span id="hover-element">
+                           ...
+                        </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="formvragen">
+                <div class="row">
+                    <div class="col-sm-10">
+                        <p><b>Wanneer vond deze plaats en wanneer geëindigd?</b><br>
+                            <input type="text" name="eindig"></p>
+                    </div>
+                    <div class="col-sm-2">
+                        <div id="hover-div">
+                            <i class="fas fa-info-circle"></i>
+                            <span id="hover-element">
+                           ...
+                        </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="formvragen">
+                <div class="row">
+                    <div class="col-sm-10">
+                        <p><b>Op welke datum en bij wie heb je melding gemaakt van deze bijzondere omstandigheid?</b><br>
+                            <input type="text" name="melding"></p>
+                    </div>
+                    <div class="col-sm-2">
+                        <div id="hover-div">
+                            <i class="fas fa-info-circle"></i>
+                            <span id="hover-element">
+                           ...
+                        </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="formvragen">
+                <div class="row">
+                    <div class="col-sm-10">
+                        <p><b>Op welke datum en bij wie heb je de bijzondere omstandigheid eventueel afgemeld?</b><br>
+                            <input type="text" name="afmeld"></p>
+                    </div>
+                    <div class="col-sm-2">
+                        <div id="hover-div">
+                            <i class="fas fa-info-circle"></i>
+                            <span id="hover-element">
+                           ...
+                        </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="formvragen">
+                <div class="row">
+                    <div class="col-sm-10">
+                        <p><b>Geef aan welke studieonderdelen in welke onderwijsperiode en in welk opleidingsjaar niet
+                                konden worden gevolgd, voor welke studieonderdelen de mogelijkheid van een herkansing
+                                bestaat en welke studieonderdelen –wanneer- dienen te worden overgelopen.</b><br>
+                            <input type="text" name="studieond"></p>
+                    </div>
+                    <div class="col-sm-2">
+                        <div id="hover-div">
+                            <i class="fas fa-info-circle"></i>
+                            <span id="hover-element">
+                           ...
+                        </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="formvragen">
+                <div class="row">
+                    <div class="col-sm-10">
+                        <p><b>Wat is de totale duur van de vertraging?</b><br>
+                            <input type="text" name="duur"></p>
+                    </div>
+                    <div class="col-sm-2">
+                        <div id="hover-div">
+                            <i class="fas fa-info-circle"></i>
+                            <span id="hover-element">
+                           ...
+                        </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="formvragen">
+                <div class="row">
+                    <div class="col-sm-10">
+                        <p><b>Op welke wijze heeft de bijzondere omstandigheid het verloop van je studie beïnvloed?</b><br>
+                            <input type="text" name="verloop"></p>
+                    </div>
+                    <div class="col-sm-2">
+                        <div id="hover-div">
+                            <i class="fas fa-info-circle"></i>
+                            <span id="hover-element">
+                           ...
+                        </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="formvragen">
+                <div class="row">
+                    <div class="col-sm-10">
+                        <p><b>Op welke wijze heb je geprobeerd de negatieve gevolgen van de bijzondere omstandigheid voor
+                                jouw studie dan wel studiefinanciering 1 zoveel mogelijk te beperken dan wel te voorkomen
+                                (raadplegen decaan, tussentijds uitschrijven/stopzetten studiefinanciering)?</b><br>
+                            <input type="text" name="wijze"></p>
+                    </div>
+                    <div class="col-sm-2">
+                        <div id="hover-div">
+                            <i class="fas fa-info-circle"></i>
+                            <span id="hover-element">
+                           ...
+                        </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
 
 
     <input id="file" name="file" type="file" />
     <button type="submit" name="submit_form">Submit</button>
-</form>
 
+</form>
+</div>
 
         <!-- Footer -->
         <footer class="footer">

@@ -20,7 +20,7 @@
 <body style="background: url(images/bg-page-white.png) no-repeat center center fixed; background-size: cover; ">
 <!-- navbar -->
 <!--<nav class="navbar navbar-expand-sm justify-content-between" >-->
-<!--    <!-- Links -->-->
+<!--     Links -->
 <!--    <div id="links">-->
 <!--        <ul class="navbar-nav">-->
 <!--            <li class="nav-item">-->
