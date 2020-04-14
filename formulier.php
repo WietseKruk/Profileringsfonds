@@ -86,7 +86,7 @@ if(isset($_GET['logout'])){session_destroy(); unset($_SESSION['user']); unset($_
 <div class="container">
 <form class="form-horizontal" method="post" enctype="multipart/form-data" >
 <?php include ('errors.php')?>
-    <h2>Persoonlijke gegevens</h2>
+    <h2><?php echo $lang['Persoonlijke gegevens'] ?></h2>
     <br>
         <div class="row">
 
@@ -159,7 +159,7 @@ if(isset($_GET['logout'])){session_destroy(); unset($_SESSION['user']); unset($_
                 <div class="formvragen">
                     <div class="row">
                         <div class="col-sm-4">
-                            <p><b>Adresgegevens</b>
+                            <p><b><?php echo $lang['Adresgegevens'] ?></b>
                                 <input type="text" name="adres"></p>
                         </div>
                         <div class="col-sm-4">
@@ -175,7 +175,7 @@ if(isset($_GET['logout'])){session_destroy(); unset($_SESSION['user']); unset($_
                 <div class="formvragen">
                     <div class="row">
                         <div class="col-sm-4">
-                            <p><b>Postcode</b>
+                            <p><b><?php echo $lang['Postcode'] ?></b>
                                 <input type="text" name="postcode"></p>
                         </div>
                         <div class="col-sm-4">
@@ -193,7 +193,7 @@ if(isset($_GET['logout'])){session_destroy(); unset($_SESSION['user']); unset($_
                 <div class="formvragen">
                     <div class="row">
                         <div class="col-sm-4">
-                           <p><b>Woonplaats</b>
+                           <p><b><?php echo $lang['Woonplaats'] ?></b>
                                <input type="text" name="woonplaats"></p>
                         </div>
                         <div class="col-sm-4">
@@ -209,7 +209,7 @@ if(isset($_GET['logout'])){session_destroy(); unset($_SESSION['user']); unset($_
                 <div class="formvragen">
                     <div class="row">
                         <div class="col-sm-4">
-                            <p><b>Telefoonnummer</b>
+                            <p><b><?php echo $lang['Telefoonnummer'] ?></b>
                                 <input type="text" name="tnummer"></p>
                         </div>
                         <div class="col-sm-4">
@@ -225,7 +225,7 @@ if(isset($_GET['logout'])){session_destroy(); unset($_SESSION['user']); unset($_
                 <div class="formvragen">
                     <div class="row">
                         <div class="col-sm-4">
-                            <p><b>E-mailadres</b>
+                            <p><b><?php echo $lang['E-mailadres'] ?></b>
                             <input type="text" name="email"></p>
                         </div>
                         <div class="col-sm-4">
@@ -241,7 +241,7 @@ if(isset($_GET['logout'])){session_destroy(); unset($_SESSION['user']); unset($_
                 <div class="formvragen">
                     <div class="row">
                         <div class="col-sm-4">
-                            <p><b>BSN-nummer</b>
+                            <p><b><?php echo $lang['BSN-nummer'] ?></b>
                                 <input type="text" name="bsn"></p>
                         </div>
                         <div class="col-sm-4">
@@ -257,7 +257,7 @@ if(isset($_GET['logout'])){session_destroy(); unset($_SESSION['user']); unset($_
                 <div class="formvragen">
                     <div class="row">
                         <div class="col-sm-4">
-                            <p><b>IBAN rekeningnummer</b>
+                            <p><b><?php echo $lang['IBAN rekeningnummer'] ?></b>
                                 <input type="text" name="iban"></p>
                         </div>
                         <div class="col-sm-4">
@@ -273,20 +273,20 @@ if(isset($_GET['logout'])){session_destroy(); unset($_SESSION['user']); unset($_
             </div>
         </div>
         <br>
-        <h2>Gegevens opleiding</h2>
+        <h2><?php echo $lang['Gegevens opleiding'] ?></h2>
         <br>
         <div class="row">
             <div class="col-sm-6">
                 <div class="formvragen">
                     <div class="row">
                         <div class="col-sm-12">
-                            <p><b>Sta jij op het moment van aanvragen ingeschreven bij NHL Stenden Hogeschool?</b></p>
+                            <p><b><?php echo $lang['ingeschreven'] ?></b></p>
                         </div>
                         <div class="col-sm-10">
                                 <input type="radio" id="ja" name="ingeschreven" value="ja">
-                                <label>Ja</label><br>
+                                <label><?php echo $lang['ja'] ?></label><br>
                                 <input type="radio" id="nee" name="ingeschreven" value="nee">
-                                <label>Nee</label><br>
+                                <label><?php echo $lang['nee'] ?></label><br>
                         </div>
                         <div class="col-sm-2">
                             <div id="hover-div">
@@ -301,7 +301,7 @@ if(isset($_GET['logout'])){session_destroy(); unset($_SESSION['user']); unset($_
                 <div class="formvragen">
                     <div class="row">
                         <div class="col-sm-10">
-                            <p><b>Voor welke opleiding sta jij op dit moment ingeschreven?</b></p>
+                            <p><b><?php echo $lang['Welkeopleiding'] ?></b></p>
                             <input type="text" name="opleiding"></p>
                         </div>
                         <div class="col-sm-2">
@@ -317,7 +317,7 @@ if(isset($_GET['logout'])){session_destroy(); unset($_SESSION['user']); unset($_
                 <div class="formvragen">
                     <div class="row">
                         <div class="col-sm-12">
-                            <p><b>Welke opleidingsvariant volg jij?</b>
+                            <p><b><?php echo $lang['variant'] ?></b>
                             </p>
                         </div>
                         <div class="col-sm-10">
@@ -341,7 +341,7 @@ if(isset($_GET['logout'])){session_destroy(); unset($_SESSION['user']); unset($_
                 <div class="formvragen">
                     <div class="row">
                         <div class="col-sm-10">
-                            <p><b>Per wanneer ben je met je studie gestart?</b></p>
+                            <p><b><?php echo $lang['startstudie'] ?></b></p>
                             <input type="text" name="gestart"></p>
                         </div>
                         <div class="col-sm-2">
@@ -357,7 +357,7 @@ if(isset($_GET['logout'])){session_destroy(); unset($_SESSION['user']); unset($_
                 <div class="formvragen">
                     <div class="row">
                         <div class="col-sm-10">
-                            <p><b>In welk studiejaar zit je?</b>
+                            <p><b><?php echo $lang['studiejaar'] ?></b>
                             </p>
                         </div>
                         <div class="col-sm-2">
@@ -387,7 +387,7 @@ if(isset($_GET['logout'])){session_destroy(); unset($_SESSION['user']); unset($_
                 <div class="formvragen">
                     <div class="row">
                         <div class="col-sm-10">
-                            <p><b>Heb je de studie tussendoor onderbroken</b>
+                            <p><b><?php echo $lang['onderbroken'] ?></b>
                             </p>
                         </div>
                         <div class="col-sm-2">
@@ -400,17 +400,16 @@ if(isset($_GET['logout'])){session_destroy(); unset($_SESSION['user']); unset($_
                         </div>
                         <div class="col-sm-12">
                                 <input type="radio" id="ja" name="onderbroken" value="ja">
-                                <label>Ja</label><br>
+                                <label><?php echo $lang['ja'] ?></label><br>
                                 <input type="radio" id="nee" name="onderbroken" value="nee">
-                                <label>Nee</label><br>
+                                <label><?php echo $lang['nee'] ?></label><br>
                         </div>
                     </div>
                 </div>
                 <div class="formvragen">
                     <div class="row">
                         <div class="col-sm-10">
-                            <p><b>Heb jij je gedurende de studieonderbreking
-                                    ook uitgeschreven bij NHL Stenden?</b>
+                            <p><b><?php echo $lang['uitgeschreven'] ?></b>
                             </p>
                         </div>
                         <div class="col-sm-2">
@@ -423,17 +422,16 @@ if(isset($_GET['logout'])){session_destroy(); unset($_SESSION['user']); unset($_
                         </div>
                         <div class="col-sm-12">
                                 <input type="radio" id="ja" name="uitgeschreven" value="ja">
-                                <label for="ja">Ja</label><br>
+                                <label for="ja"><?php echo $lang['ja'] ?></label><br>
                                 <input type="radio" id="nee" name="uitgeschreven" value="nee">
-                                <label for="nee">Nee</label><br>
+                                <label for="nee"><?php echo $lang['nee'] ?></label><br>
                         </div>
                     </div>
                 </div>
                 <div class="formvragen">
                     <div class="row">
                         <div class="col-sm-10">
-                            <p><b>Heb je ook voor andere studie(s)
-                                    ingeschreven gestaan bij NHL Stenden? En zo ja, welke.</b>
+                            <p><b><?php echo $lang['anderestud'] ?></b>
                                 <input type="text" name="andere"></p>
                         </div>
                         <div class="col-sm-2">
@@ -449,8 +447,7 @@ if(isset($_GET['logout'])){session_destroy(); unset($_SESSION['user']); unset($_
                 <div class="formvragen">
                     <div class="row">
                         <div class="col-sm-10">
-                            <p><b>Heb je eerder een inschrijving bij een
-                                    andere instelling (HBO/Universiteit) gehad? Zo ja, bij welke instelling, en welke periode</b>
+                            <p><b><?php echo $lang['inschrijving'] ?></b>
                                 <input type="text" name="instelling"></p>
                         </div>
                         <div class="col-sm-2">
@@ -466,7 +463,7 @@ if(isset($_GET['logout'])){session_destroy(); unset($_SESSION['user']); unset($_
             </div>
         </div>
         <br>
-        <h2>Bijzondere omstandigheid</h2>
+        <h2><?php echo $lang['bijzonder'] ?></h2>
         <br>
         <div class="row">
             <div class="col-sm-12">

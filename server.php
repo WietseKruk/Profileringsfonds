@@ -11,7 +11,7 @@ $email_2 ="";
 //db variables
 $host = 'localhost';
 $name = 'root';
-$pass = '';
+$pass = 'root';
 $database = 'profileringsfonds';
 
     //verbinding met database + errormsg
