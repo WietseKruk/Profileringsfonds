@@ -1,10 +1,11 @@
-body{
+body {
     font-family: CeraPro;
     font-weight: 500;
 
 
 }
-.content{
+
+.content {
     border-radius: 10em;
     background: white;
     margin: 0px 200px 0px 200px;
@@ -14,7 +15,8 @@ body{
     font-family: sans-serif;
     letter-spacing: 2px;
 }
-.maintext{
+
+.maintext {
     padding: 50px;
     text-align: center;
     color: black;
@@ -22,48 +24,53 @@ body{
 }
 
 
-.jumbotron{
+.jumbotron {
     text-align: center;
     padding-bottom: 10px;
     border-bottom: black;
     border-bottom: 10px;
 }
 
-.navbar{
+.navbar {
     background-image: url(images/headeropac2.png);
     text-align: right;
     font-size: 20px;
     border: 1px solid darkblue;
     border-collapse: collapse;
 }
-.nav-link{
+
+.nav-link {
     color: white;
     margin-top: 40px;
     margin-right: 30px;
 }
-.nav-item{
+
+.nav-item {
     color: white;
 }
-.navbar-brand{
+
+.navbar-brand {
     text-align: right;
 }
 
-#links a:link{
+#links a:link {
     color: white;
 }
 
 
-#links a:hover{
+#links a:hover {
     color: darkblue;
 }
+
 .input-group {
     margin: 10px 0px 10px 0px;
 }
 
-.header{
+.header {
     text-align: center;
 }
-form .content{
+
+form .content {
     width: 30%;
     margin: 10px 10px 10px;
     padding: 10px;
@@ -71,22 +78,26 @@ form .content{
     background: white;
     border-radius: 0px 0px 10px 10px;
 }
-.input-group input{
+
+.input-group input {
     width: 80%;
     padding: 10px 10px;
     font-size: 16px;
     border-radius: 5px;
     border: 1px solid darkblue;
 }
+
 label {
     display: inline-block;
     width: 300px;
     text-align: right;
 }
-.input-group label{
+
+.input-group label {
     margin: 3px;
 }
-.btn button{
+
+.btn button {
     padding: 30px;
     font-size: 15px;
     color: darkslateblue;
@@ -96,20 +107,23 @@ label {
     justify-content: center;
 }
 
-.success{
+.success {
     text-align: right;
     color: black;
     border: 2px solid darkblue;
     border-radius: 5px;
 }
-.error{
+
+.error {
     text-align: center;
     color: darkred;
 }
+
 footer {
     background-color: aliceblue;
     border: 1px solid lightblue;
 }
+
 form.search input[type=search] {
     padding: 10px;
     font-size: 17px;
@@ -118,6 +132,7 @@ form.search input[type=search] {
     width: 80%;
     background: #f1f1f1;
 }
+
 form.search button {
     float: left;
     width: 20%;
@@ -129,6 +144,7 @@ form.search button {
     border-left: none; /* Prevent double borders */
     cursor: pointer;
 }
+
 form.search button:hover {
     background: #0b7dda;
 }
@@ -139,6 +155,7 @@ form.search::after {
     clear: both;
     display: table;
 }
+
 .login {
     background-color: #FFFFFF;
     width: 400px;
@@ -177,24 +194,30 @@ form.search::after {
 form.form1 {
     padding-top: 40px;
 }
-.login table{
+
+.login table {
     border-collapse: collapse;
     border-radius: 1.5em;
 }
-.login table, th, tr, td{
+
+.login table, th, tr, td {
     border: 1px solid gray;
 }
-td, th{
+
+td, th {
     text-align: left;
     padding: 8px;
 }
-tr:nth-child(even){
+
+tr:nth-child(even) {
     background-color: #dddddd;
 }
-td:hover{
+
+td:hover {
     background-color: lightblue;
 }
-.login table{
+
+.login table {
     width: 400px;
     height: auto;
 }
@@ -250,7 +273,8 @@ a {
     color: #E1BEE7;
     text-decoration: none
 }
-.container{
+
+.container {
     opacity: .90;
     max-width: 500px;
     margin: 10px auto;
@@ -260,7 +284,7 @@ a {
 }
 
 
-#hover-element{
+#hover-element {
     display: none;
     position: absolute;
     background-color: #9ed7da;
@@ -284,6 +308,6 @@ a {
     padding: 60px;
 }
 
-#Formvragen{
+#Formvragen {
 
 }

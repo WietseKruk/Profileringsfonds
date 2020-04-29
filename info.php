@@ -1,6 +1,11 @@
-<?php include('server.php')?>
+<?php include('server.php') ?>
 <?php
-if(isset($_GET['logout'])){session_destroy(); unset($_SESSION['user']); unset($_SESSION['id']); header('location: index.php');}?>
+if (isset($_GET['logout'])) {
+    session_destroy();
+    unset($_SESSION['user']);
+    unset($_SESSION['id']);
+    header('location: index.php');
+} ?>
 <html>
 <head>
     <link rel="stylesheet" href="style.css">
@@ -8,15 +13,22 @@ if(isset($_GET['logout'])){session_destroy(); unset($_SESSION['user']); unset($_
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+            integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+            crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+            integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+            crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+            integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+            crossorigin="anonymous"></script>
 </head>
 <body style="background: url(images/bg-page-white.png) no-repeat center center fixed; background-size: cover; ">
 <!-- navbar -->
-<nav class="navbar navbar-expand-sm justify-content-between" >
+<nav class="navbar navbar-expand-sm justify-content-between">
     <!-- Links -->
     <div id="links">
         <ul class="navbar-nav">
@@ -42,30 +54,32 @@ if(isset($_GET['logout'])){session_destroy(); unset($_SESSION['user']); unset($_
                 <li class="nav-item">
                     <a class="nav-link" href="login.php">Login</a>
                 </li>
-            <?php endif?>
-            <?php if(isset($_SESSION['admin'])) : ?>
+            <?php endif ?>
+            <?php if (isset($_SESSION['admin'])) : ?>
                 <li>
                     <a class="nav-link" href="admin.php">admin</a>
                 </li>
-            <?php endif?>
+            <?php endif ?>
             <li>
                 <img src="images/globe.png" width="35px">
             </li>
             <li class="nav-item">
-                <a  href="#" data-lang="nl">NL</a>
-            </li>/
-            <li class="nav-item" >
-                <a  href="#" data-lang="en">ENG</a>
+                <a href="#" data-lang="nl">NL</a>
+            </li>
+            /
+            <li class="nav-item">
+                <a href="#" data-lang="en">ENG</a>
             </li>
 
 
             <?php if (isset($_SESSION['user'])) : ?>
                 <div class="success" style="margin-left: 400px; margin-top: 45px; margin-bottom: 45px;">
-                    <li class="nav-item" >
-                        Ingelogd als <?php echo $_SESSION['user'];?> --- <a style="color: red" href="index.php?logout='1'">Log uit</a>
+                    <li class="nav-item">
+                        Ingelogd als <?php echo $_SESSION['user']; ?> --- <a style="color: red"
+                                                                             href="index.php?logout='1'">Log uit</a>
                     </li>
                 </div>
-            <?php endif?>
+            <?php endif ?>
         </ul>
     </div>
     <form class="search form-inline my-2 my-lg-0" action="search.php">
@@ -74,11 +88,6 @@ if(isset($_GET['logout'])){session_destroy(); unset($_SESSION['user']); unset($_
     </form>
     </form>
 </nav>
-
-
-
-
-
 
 
 <!-- Footer -->
@@ -94,7 +103,8 @@ if(isset($_GET['logout'])){session_destroy(); unset($_SESSION['user']); unset($_
                 <a href="https://nhlstenden.com/"> Nhlstenden.com</a>
             </div>
             <div class="footer text-center py-3 col-3">
-                <a href="https://intranet.nhlstenden.com/" style="font-family: sans-serif; font-size: 20px; color: black">
+                <a href="https://intranet.nhlstenden.com/"
+                   style="font-family: sans-serif; font-size: 20px; color: black">
                     <img src="images/intranetblue.png" alt="Intranet" style="width:50px">
                 </a>
             </div>

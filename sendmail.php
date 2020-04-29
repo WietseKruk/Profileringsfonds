@@ -1,6 +1,7 @@
 <?php
 
 /* Namespace alias. */
+
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
@@ -39,12 +40,8 @@ try {
 
     /* Finally send the mail. */
     $mail->send();
-}
-catch (Exception $e)
-{
+} catch (Exception $e) {
     echo $e->errorMessage();
-}
-catch (\Exception $e)
-{
+} catch (\Exception $e) {
     echo $e->getMessage();
 }
