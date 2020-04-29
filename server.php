@@ -12,7 +12,7 @@ $email_2 ="";
 //db variables
 $host = 'localhost';
 $name = 'root';
-$pass = 'root';
+$pass = '';
 $database = 'profileringsfonds';
 
     //verbinding met database + errormsg
@@ -100,7 +100,7 @@ if(isset($_POST['register'])){
         }
 
         //Session ID zetten
-        $_SESSION['reg'] = $email_1 . " succesvol toegevoegd met wachtwoord " . $password;
+        $_SESSION['reg'] = $email_1 . " is succesvol toegevoegd ";
 
         $email_1 = "";
         $email_2 = "";
@@ -144,7 +144,49 @@ if(isset($_POST['register'])){
              }
          } else {array_push($errors, "Ongeldige gebruikersnaam/wachtwoord combinatie");}
      }
+if (isset($_POST['change_pass'])) {
+    $current_pass = mysqli_real_escape_string($conn, $_POST['current_pass']);
+    $pass1 = mysqli_real_escape_string($conn, $_POST['new_password_1']);
+    $pass2 = mysqli_real_escape_string($conn, $_POST['new_password_2']);
 
+    //Als er fouten zijn push naar array
+    if (empty($current_pass)) {
+        array_push($errors, "Huidig wachtwoord moet ingevuld worden");
+    }
+    if (empty($pass1)) {
+        array_push($errors, "Nieuw wachtwoord moet ingevuld worden");
+    }
+    if (empty($pass2)) {
+        array_push($errors, "Bevestig wachtwoord moet ingevuld worden");
+    }
+    if ($pass1 != $pass2) {
+        array_push($errors, "De twee wachtwoorden komen niet overeen");
+    }
+    if ($current_pass == $pass1 || $current_pass == $pass2) {
+        array_push($errors, "U moet een nieuw wachtwoord invoeren");
+    }
+    $id = $_SESSION['id'];
+    if (count($errors) == 0) {
+        $password = md5($current_pass);
+        $query = "SELECT * FROM users WHERE password='$password' AND uID = '$id'";
+        $result1 = mysqli_query($conn, $query);
+
+        if (mysqli_num_rows($result1) == 1) {
+            $new_pass = md5($pass1);
+            $query = "UPDATE users SET password = '$new_pass', firstlogin = '0' WHERE password='$password' AND uID = '$id'";
+            mysqli_query($conn, $query);
+            while ($row = $result1->fetch_assoc()) {
+                $_SESSION['id'] = $row['uID'];
+                $_SESSION['type'] = $row['type'];
+                $_SESSION['user'] = $row['email'];
+            }
+            header('location:index.php');
+        }
+    }else{array_push($errors, "Huidig wachtwoord is incorrect");}
+
+
+
+}
 
 
 if(isset($_POST['submit_form'])) {
@@ -452,77 +494,7 @@ if(isset($_POST['submit_form'])) {
     }
 
 
-    if (isset($_POST['change_pass'])) {
-        $current_pass = mysqli_real_escape_string($conn, $_POST['current_pass']);
-        $pass1 = mysqli_real_escape_string($conn, $_POST['new_password_1']);
-        $pass2 = mysqli_real_escape_string($conn, $_POST['new_password_2']);
 
-        //Als er fouten zijn push naar array
-        if (empty($current_pass)) {
-            array_push($errors, "Huidig wachtwoord moet ingevuld worden");
-        }
-        if (empty($pass1)) {
-            array_push($errors, "Nieuw wachtwoord moet ingevuld worden");
-        }
-        if (empty($pass2)) {
-            array_push($errors, "Bevestig wachtwoord moet ingevuld worden");
-        }
-        if ($pass1 != $pass2) {
-            array_push($errors, "De twee wachtwoorden komen niet overeen");
-        }
-        if ($current_pass == $pass1 || $current_pass == $pass2) {
-            array_push($errors, "U moet een nieuw wachtwoord invoeren");
-        }
-        $id = $_SESSION['id'];
-        if (count($errors) == 0) {
-            $password = md5($current_pass);
-            $query = "SELECT * FROM users WHERE password='$password' AND uID = '$id'";
-            $result1 = mysqli_query($conn, $query);
-
-            if (mysqli_num_rows($result1) == 1) {
-                $new_pass = md5($pass1);
-                $query = "UPDATE users SET password = '$new_pass', firstlogin = '0' WHERE password='$password' AND uID = '$id'";
-                mysqli_query($conn, $query);
-                while ($row = $result1->fetch_assoc()) {
-                    $_SESSION['id'] = $row['uID'];
-                    $_SESSION['type'] = $row['type'];
-                    $_SESSION['user'] = $row['email'];
-                }
-
-            }
-        }
-        header('location:index.php');
-
-    }
-
-
-    //wachtwoord veranderen
-    if (isset($_POST['change_pass'])) {
-        $pass_1 = mysqli_real_escape_string($conn, $_POST['new_password_1']);
-        $pass_2 = mysqli_real_escape_string($conn, $_POST['new_password_2']);
-
-        //push errors
-        if (empty($pass_1)) {
-            array_push($errors, "Wachtwoord is leeg");
-        }
-        if (empty($pass_2)) {
-            array_push($errors, "Bevestig wachtwoord is leeg");
-        }
-        if ($pass_1 != $pass_2) {
-            array_push($errors, "De wachtwoorden komen niet overeen");
-        }
-
-        //wachtwoord hashen en updaten als er geen errors zijn
-        if (count($errors) == 0) {
-            $pass = md5($pass_1);
-            $id = $_SESSION['id'];
-            $user = $_SESSION['user'];
-            $query = "UPDATE users SET password = '$pass', firstlogin = '0' WHERE uID = '$id' AND email = '$user'";
-            mysqli_query($conn, $query);
-            mysqli_close($conn);
-            header('location: index.php');
-        }
-    }
 
 
     if (isset($_POST['Fsubmit'])) {
